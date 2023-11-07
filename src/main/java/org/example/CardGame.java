@@ -8,6 +8,10 @@ public class CardGame
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        var card = new Card();
+        var player = new Player();
+
+        System.out.println("Hello, world!");
+        System.out.println("Card: " + card + ", Player: " + player);
     }
 }
