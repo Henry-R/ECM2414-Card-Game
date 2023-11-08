@@ -2,6 +2,7 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Arrays;
 
@@ -13,15 +14,22 @@ class DeckTest {
     void deckConstructor() {
         var cardArray = new Card[]{new Card(1), new Card(2), new Card(3)};
         Collection<Card> CardCollection = Arrays.asList(cardArray);
+        Collection<Card> EmptyCardCollection = new ArrayList<>();
 
+        // Test empty deck is actually empty
         var TestDeck1 = new Deck();
         assertNull(TestDeck1.dealNextCard());
 
+        // Test cards are all in deck in the correct order
         var TestDeck2 = new Deck(CardCollection);
         assertEquals(1, TestDeck2.dealNextCard().getDenomination());
         assertEquals(2, TestDeck2.dealNextCard().getDenomination());
         assertEquals(3, TestDeck2.dealNextCard().getDenomination());
         assertNull(TestDeck2.dealNextCard());
+
+        // Test empty list of cards give empty deck
+        var TestDeck3 = new Deck(EmptyCardCollection);
+        assertNull(TestDeck3.dealNextCard());
     }
 
     @Test
