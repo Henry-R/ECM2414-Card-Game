@@ -1,9 +1,5 @@
 package org.example;
 
-/**
- * Hello world!
- *
- */
 public class CardGame
 {
     public static void main( String[] args )
