@@ -1,13 +1,13 @@
 package org.example;
 
-import java.util.ArrayDeque;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.Queue;
 
 public class Deck {
     private final Queue<Card> cards;
 
     public Deck() {
-        cards = new ArrayDeque<>();
+        cards = new ConcurrentLinkedQueue<>();
     }
 
     public void PushCard(Card card) {
