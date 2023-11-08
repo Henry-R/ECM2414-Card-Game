@@ -8,7 +8,7 @@ class CardTest {
     @Test
     void getDenomination() {
         var TestCard = new Card(5);
-        assertEquals(5, TestCard.GetDenomination());
-        assertNotEquals(4, TestCard.GetDenomination());
+        assertEquals(5, TestCard.getDenomination());
+        assertNotEquals(4, TestCard.getDenomination());
     }
 }

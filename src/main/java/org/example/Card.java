@@ -15,7 +15,7 @@ public class Card {
      * Returns the denomination (value) of the card
      * @return the card's denomination
      */
-    public int GetDenomination() {
+    public int getDenomination() {
         return denomination;
     }
 }

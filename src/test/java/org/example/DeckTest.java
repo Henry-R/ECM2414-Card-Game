@@ -9,22 +9,22 @@ class DeckTest {
     @Test
     void pushCard() {
         var TestDeck = new Deck();
-        TestDeck.PushCard(new Card(1));
-        assertEquals(1, TestDeck.DealNextCard().GetDenomination());
-        TestDeck.PushCard(new Card(2));
-        TestDeck.PushCard(new Card(3));
-        assertEquals(2, TestDeck.DealNextCard().GetDenomination());
+        TestDeck.pushCard(new Card(1));
+        assertEquals(1, TestDeck.dealNextCard().getDenomination());
+        TestDeck.pushCard(new Card(2));
+        TestDeck.pushCard(new Card(3));
+        assertEquals(2, TestDeck.dealNextCard().getDenomination());
     }
 
     @Test
-    void getNextCard() {
+    void dealNextCard() {
         var TestDeck = new Deck();
-        TestDeck.PushCard(new Card(1));
-        TestDeck.PushCard(new Card(2));
-        TestDeck.PushCard(new Card(3));
-        assertEquals(1, TestDeck.DealNextCard().GetDenomination());
-        assertEquals(2, TestDeck.DealNextCard().GetDenomination());
-        assertEquals(3, TestDeck.DealNextCard().GetDenomination());
-        assertNull(TestDeck.DealNextCard());
+        TestDeck.pushCard(new Card(1));
+        TestDeck.pushCard(new Card(2));
+        TestDeck.pushCard(new Card(3));
+        assertEquals(1, TestDeck.dealNextCard().getDenomination());
+        assertEquals(2, TestDeck.dealNextCard().getDenomination());
+        assertEquals(3, TestDeck.dealNextCard().getDenomination());
+        assertNull(TestDeck.dealNextCard());
     }
 }
