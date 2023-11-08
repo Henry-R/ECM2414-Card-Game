@@ -2,9 +2,27 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Collection;
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class DeckTest {
+
+    @Test
+    void deckConstructor() {
+        var cardArray = new Card[]{new Card(1), new Card(2), new Card(3)};
+        Collection<Card> CardCollection = Arrays.asList(cardArray);
+
+        var TestDeck1 = new Deck();
+        assertNull(TestDeck1.dealNextCard());
+
+        var TestDeck2 = new Deck(CardCollection);
+        assertEquals(1, TestDeck2.dealNextCard().getDenomination());
+        assertEquals(2, TestDeck2.dealNextCard().getDenomination());
+        assertEquals(3, TestDeck2.dealNextCard().getDenomination());
+        assertNull(TestDeck2.dealNextCard());
+    }
 
     @Test
     void pushCard() {
