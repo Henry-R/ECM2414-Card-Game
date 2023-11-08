@@ -4,7 +4,7 @@ public class CardGame
 {
     public static void main( String[] args )
     {
-        var card = new Card();
+        var card = new Card(5);
         var player = new Player();
 
         System.out.println("Hello, world!");
