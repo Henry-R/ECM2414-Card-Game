@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="moved CardReader test files to resources">
+    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Test for CardReader failure">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/CardReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/CardReaderTest.java" afterDir="false" />
     </list>
@@ -78,7 +78,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CardReaderTest.success">
+  <component name="RunManager" selected="JUnit.CardReaderTest.getCards">
     <configuration name="All in CardGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CardGame" />
       <option name="PACKAGE_NAME" value="" />
@@ -152,9 +152,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CardReaderTest.getCards" />
         <item itemvalue="JUnit.CardReaderTest.success" />
         <item itemvalue="JUnit.All in CardGame" />
-        <item itemvalue="JUnit.CardReaderTest.getCards" />
         <item itemvalue="JUnit.CardReaderTest" />
         <item itemvalue="JUnit.DeckTest.deckConstructor" />
       </list>
@@ -253,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699490508068</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Test for CardReader failure">
+      <created>1699535835164</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1699535835164</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -281,6 +288,7 @@
     <MESSAGE value="Test when Deck given empty card collection" />
     <MESSAGE value="Deckreader class and tests" />
     <MESSAGE value="moved CardReader test files to resources" />
-    <option name="LAST_COMMIT_MESSAGE" value="moved CardReader test files to resources" />
+    <MESSAGE value="Test for CardReader failure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test for CardReader failure" />
   </component>
 </project>
