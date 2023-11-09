@@ -10,8 +10,11 @@ class CardReaderTest {
         final var URL = this.getClass().getResource("/test_deck.txt");
         assertNotNull(URL);
 
-        var reader = new CardReader(URL.getPath());
-        assertTrue(reader.success());
+        var reader1 = new CardReader(URL.getPath());
+        assertTrue(reader1.success());
+
+        var reader2 = new CardReader("");
+        assertFalse(reader2.success());
     }
 
     @Test
