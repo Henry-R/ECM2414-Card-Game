@@ -120,9 +120,10 @@ public class Player {
 
         int oldCardDenom = this.discardCard();
         this.writeToFile(newCardDenom, oldCardDenom);
-
-
-
+        if (preferredcount == 4) {
+            hasWon = true;
+        }
+        
         return hasWon;
     }
 
