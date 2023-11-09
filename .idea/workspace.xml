@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Deckreader class and tests">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CardReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/CardReaderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/test_bad_deck.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/test_deck.txt" afterDir="false" />
+    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="moved CardReader test files to resources">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/CardReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/CardReaderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/test_bad_deck.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/test_bad_deck.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/test_deck.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/test_deck.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,18 +63,24 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": ""
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\henry\IdeaProjects\CardGame\src\test\resources" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CardReaderTest.success">
+  <component name="RunManager" selected="JUnit.All in CardGame">
     <configuration name="All in CardGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CardGame" />
       <option name="PACKAGE_NAME" value="" />
@@ -149,10 +154,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CardReaderTest.success" />
-        <item itemvalue="JUnit.CardReaderTest" />
-        <item itemvalue="JUnit.CardReaderTest.getCards" />
         <item itemvalue="JUnit.All in CardGame" />
+        <item itemvalue="JUnit.CardReaderTest.success" />
+        <item itemvalue="JUnit.CardReaderTest.getCards" />
+        <item itemvalue="JUnit.CardReaderTest" />
         <item itemvalue="JUnit.DeckTest.deckConstructor" />
       </list>
     </recent_temporary>
@@ -236,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699475757922</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Deckreader class and tests">
+      <created>1699488972273</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1699488972273</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -263,6 +275,7 @@
     <MESSAGE value="Added Deck constructor that creates deck with initial collection of cards" />
     <MESSAGE value="Test when Deck given empty card collection" />
     <MESSAGE value="Deckreader class and tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Deckreader class and tests" />
+    <MESSAGE value="moved CardReader test files to resources" />
+    <option name="LAST_COMMIT_MESSAGE" value="moved CardReader test files to resources" />
   </component>
 </project>
