@@ -21,7 +21,6 @@ class CardReaderTest {
     void getCards() {
         final var test1URL = this.getClass().getResource("/test_deck.txt");
         assertNotNull(test1URL);
-
         var reader1 = new CardReader(test1URL.getPath());
         var cards1 = reader1.getCards();
         assertEquals(3, cards1.size());
