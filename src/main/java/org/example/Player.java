@@ -1,13 +1,19 @@
 package org.example;
 import java.util.Queue;
 import java.util.ArrayDeque;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Player {
-    private final int preferredDenom;
+    private final int playerNumber;
     private final Deck inputdeck;
     private final Deck outputdeck;
     private Queue<Card> hand;
     private int preferredcount;
+    private final String filename;
+    private final File textFile;
 
     /**
      * Constructs the Player with a given input deck, output deck and initial hand
@@ -17,32 +23,107 @@ public class Player {
      * @param h The initial hand of cards for the player
      */
     public Player(int pd, Deck id, Deck od, Queue<Card> h) {
-        preferredDenom = pd;
+        playerNumber = pd;
         inputdeck = id;
         outputdeck = od;
         hand = h;
         preferredcount = 0;
+        filename = "player" +playerNumber+ "_output.txt";
+        textFile = createTextFile();
+    }
+
+    /**
+     * Creates output text file for the player
+     * @param playerNumber
+     * @return the text file object
+     */
+    public File createTextFile() {
+        try{
+            File textFile = new File(filename);
+            if (textFile.createNewFile()) {
+                return textFile;
+            } else {
+                textFile.delete();
+                textFile.createNewFile();
+                return textFile;
+            }
+        } catch (IOException e) {
+            return null;
+      }
     }
 
     /**
      * Draws card from input deck
-     * Returns the denomination of the drawn card
-     * @return newly drawn card's denomination
+     * @return newly drawn card
      */
-    public int drawCard() {
+    public Card drawCard() {
         Card drawnCard = inputdeck.dealNextCard();
-        return drawnCard.getDenomination();
+        return drawnCard;
     }
 
     /**
      * Discards card from hand and adds to output deck
-     * Returns denomination of the discarded card
      * @return newly discarded card's denomination
      */
     public int discardCard() {
         Card discardedCard = hand.remove();
         outputdeck.pushCard(discardedCard);
         return discardedCard.getDenomination();
+    }
+
+    /**
+     * Creates printable representation of the players current hand,
+     * including the preferred values that are not in the hand queue
+     * @return string of a representation of the denomination of the cards in the players hand
+     */
+    public String createPrintableHand() {
+        String printableHand = "";
+        for (int i = 0; i < preferredcount; i++) {
+            printableHand += "1 ";
+        }
+        for(Card c : hand) { 
+            printableHand += String.valueOf(c.getDenomination()) + " ";
+        }
+        return printableHand;
+    }
+
+    /**
+     * Writes current play to text file
+     * @param nCard newly drawn card denomination
+     * @param oCard newly discarded card denomination
+     */
+    public void writeToFile(int nCard, int oCard){
+        try {
+            FileWriter myWriter = new FileWriter(filename);
+            myWriter.write("player " +playerNumber+ " draws a " +nCard+ " from deck " +inputdeck.getDeckNumber()+ 
+                            "\nplayer " +playerNumber+ " discards a " +oCard+ " to deck " +outputdeck.getDeckNumber()+ 
+                            "\nplayer" +playerNumber+ " current hand is " +this.createPrintableHand());
+            myWriter.close();
+        } catch (IOException e) {}
+    }
+
+    /** 
+     * Does a single play for the player, draws new card,
+     * discards a card, checks if player has won.
+     * @return whether the player has now won after this play
+    */
+    public boolean play() {
+        boolean hasWon = false ;
+        Card newCard = this.drawCard();
+        int newCardDenom = newCard.getDenomination();
+
+        if (newCardDenom == playerNumber) {
+            preferredcount ++;
+        } else {
+            hand.add(newCard);
+        }
+
+        int oldCardDenom = this.discardCard();
+        this.writeToFile(newCardDenom, oldCardDenom);
+
+
+
+        return hasWon;
     }
 
 
