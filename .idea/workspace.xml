@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="deck file from project spec">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/deck1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="slightly cleaned up CardReader constructor">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CardReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CardReader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,7 +274,21 @@
       <option name="project" value="LOCAL" />
       <updated>1699536080113</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="deck file from project spec">
+      <created>1699536634221</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1699536634221</updated>
+    </task>
+    <task id="LOCAL-00017" summary="slightly cleaned up CardReader constructor">
+      <created>1699537027029</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1699537027029</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -308,6 +320,7 @@
     <MESSAGE value="Test that CardReader returns correct number of cards" />
     <MESSAGE value="remove unnecessary space" />
     <MESSAGE value="deck file from project spec" />
-    <option name="LAST_COMMIT_MESSAGE" value="deck file from project spec" />
+    <MESSAGE value="slightly cleaned up CardReader constructor" />
+    <option name="LAST_COMMIT_MESSAGE" value="slightly cleaned up CardReader constructor" />
   </component>
 </project>

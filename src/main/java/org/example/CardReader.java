@@ -38,9 +38,9 @@ public class CardReader {
      * @return A list of Card objects
      */
     private ArrayList<Card> getCardsFromFile(Scanner reader) {
-        ArrayList<Card> cards = new ArrayList<>();
+        var cards = new ArrayList<Card>();
         while (reader.hasNextLine()) {
-            String cardStr = reader.nextLine();
+            var cardStr = reader.nextLine();
             try {
                 var denominator = Integer.parseInt(cardStr);
                 if (denominator > 0) {
