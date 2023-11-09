@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Added Deck constructor that creates deck with initial collection of cards">
+    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Deckreader class and tests">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CardReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/CardReaderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/test_bad_deck.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/test_deck.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DeckTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/DeckTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +75,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DeckTest.deckConstructor">
+  <component name="RunManager" selected="JUnit.CardReaderTest.success">
     <configuration name="All in CardGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CardGame" />
       <option name="PACKAGE_NAME" value="" />
@@ -81,7 +84,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CardTest.getDenomination" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CardReaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CardGame" />
       <extension name="coverage">
         <pattern>
@@ -90,14 +93,29 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.CardTest" />
-      <option name="METHOD_NAME" value="getDenomination" />
+      <option name="MAIN_CLASS_NAME" value="org.example.CardReaderTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CardReaderTest.getCards" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CardGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.CardReaderTest" />
+      <option name="METHOD_NAME" value="getCards" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DeckTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CardReaderTest.success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CardGame" />
       <extension name="coverage">
         <pattern>
@@ -106,8 +124,9 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.DeckTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="org.example.CardReaderTest" />
+      <option name="METHOD_NAME" value="success" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -130,10 +149,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DeckTest.deckConstructor" />
-        <item itemvalue="JUnit.DeckTest" />
+        <item itemvalue="JUnit.CardReaderTest.success" />
+        <item itemvalue="JUnit.CardReaderTest" />
+        <item itemvalue="JUnit.CardReaderTest.getCards" />
         <item itemvalue="JUnit.All in CardGame" />
-        <item itemvalue="JUnit.CardTest.getDenomination" />
+        <item itemvalue="JUnit.DeckTest.deckConstructor" />
       </list>
     </recent_temporary>
   </component>
@@ -209,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699475404966</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Test when Deck given empty card collection">
+      <created>1699475757922</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1699475757922</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -234,6 +261,8 @@
     <MESSAGE value="Removed JUnit test 4 as a dependency and added JUnit test 5 with tests for Deck and Card" />
     <MESSAGE value="Refactored method names to fit with naming convention" />
     <MESSAGE value="Added Deck constructor that creates deck with initial collection of cards" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Deck constructor that creates deck with initial collection of cards" />
+    <MESSAGE value="Test when Deck given empty card collection" />
+    <MESSAGE value="Deckreader class and tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deckreader class and tests" />
   </component>
 </project>
