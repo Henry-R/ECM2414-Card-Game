@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Test for CardReader failure">
+    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="deck file from project spec">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/deck1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/CardReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/CardReaderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,13 +73,14 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\henry\IdeaProjects\CardGame\src\main\resources" />
       <recent name="C:\Users\henry\IdeaProjects\CardGame\src\test\resources" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CardReaderTest.getCards">
+  <component name="RunManager" selected="JUnit.All in CardGame">
     <configuration name="All in CardGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CardGame" />
       <option name="PACKAGE_NAME" value="" />
@@ -152,9 +154,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in CardGame" />
         <item itemvalue="JUnit.CardReaderTest.getCards" />
         <item itemvalue="JUnit.CardReaderTest.success" />
-        <item itemvalue="JUnit.All in CardGame" />
         <item itemvalue="JUnit.CardReaderTest" />
         <item itemvalue="JUnit.DeckTest.deckConstructor" />
       </list>
@@ -260,7 +262,21 @@
       <option name="project" value="LOCAL" />
       <updated>1699535835164</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Test that CardReader returns correct number of cards">
+      <created>1699535950917</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1699535950917</updated>
+    </task>
+    <task id="LOCAL-00015" summary="remove unnecessary space">
+      <created>1699536080113</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1699536080113</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -289,6 +305,9 @@
     <MESSAGE value="Deckreader class and tests" />
     <MESSAGE value="moved CardReader test files to resources" />
     <MESSAGE value="Test for CardReader failure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test for CardReader failure" />
+    <MESSAGE value="Test that CardReader returns correct number of cards" />
+    <MESSAGE value="remove unnecessary space" />
+    <MESSAGE value="deck file from project spec" />
+    <option name="LAST_COMMIT_MESSAGE" value="deck file from project spec" />
   </component>
 </project>
