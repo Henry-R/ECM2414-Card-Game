@@ -19,8 +19,8 @@ public class CardReader {
      */
     public CardReader(String filename) {
         try {
-            var input = new File(filename);
-            Scanner reader = new Scanner(input);
+            var input  = new File(filename);
+            var reader = new Scanner(input);
             cards = getCardsFromFile(reader);
             readSuccessful = true;
         } catch (FileNotFoundException e) {
