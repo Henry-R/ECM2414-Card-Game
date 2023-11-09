@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="slightly cleaned up CardReader constructor">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CardReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CardReader.java" afterDir="false" />
+    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="slightly cleaned up CardReader.getCardsFromFile">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CardGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CardGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DeckTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/DeckTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +80,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in CardGame">
+  <component name="RunManager" selected="JUnit.java in CardGame">
     <configuration name="All in CardGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CardGame" />
       <option name="PACKAGE_NAME" value="" />
@@ -134,29 +136,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DeckTest.deckConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="java in CardGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CardGame" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.DeckTest" />
-      <option name="METHOD_NAME" value="deckConstructor" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.java in CardGame" />
         <item itemvalue="JUnit.All in CardGame" />
         <item itemvalue="JUnit.CardReaderTest.getCards" />
         <item itemvalue="JUnit.CardReaderTest.success" />
         <item itemvalue="JUnit.CardReaderTest" />
-        <item itemvalue="JUnit.DeckTest.deckConstructor" />
       </list>
     </recent_temporary>
   </component>
@@ -288,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699537027029</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="slightly cleaned up CardReader.getCardsFromFile">
+      <created>1699537084033</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1699537084033</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -296,7 +297,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -321,6 +334,7 @@
     <MESSAGE value="remove unnecessary space" />
     <MESSAGE value="deck file from project spec" />
     <MESSAGE value="slightly cleaned up CardReader constructor" />
-    <option name="LAST_COMMIT_MESSAGE" value="slightly cleaned up CardReader constructor" />
+    <MESSAGE value="slightly cleaned up CardReader.getCardsFromFile" />
+    <option name="LAST_COMMIT_MESSAGE" value="slightly cleaned up CardReader.getCardsFromFile" />
   </component>
 </project>
