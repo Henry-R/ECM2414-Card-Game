@@ -18,6 +18,21 @@ public class Player {
      * @param pd The preferred denomination of cards for the player
      * @param id The deck for the player to draw cards from
      * @param od The deck for the player to discard cards to
+     */
+    public Player(int pd, Deck id, Deck od) {
+        playerNumber = pd;
+        inputdeck = id;
+        outputdeck = od;
+        preferredcount = 0;
+        filename = "player" +playerNumber+ "_output.txt";
+        textFile = createTextFile();
+    }
+
+    /**
+     * Constructs the Player with a given input deck, output deck and initial hand
+     * @param pd The preferred denomination of cards for the player
+     * @param id The deck for the player to draw cards from
+     * @param od The deck for the player to discard cards to
      * @param h The initial hand of cards for the player
      */
     public Player(int pd, Deck id, Deck od, Queue<Card> h) {
@@ -28,6 +43,14 @@ public class Player {
         preferredcount = 0;
         filename = "player" +playerNumber+ "_output.txt";
         textFile = createTextFile();
+    }
+
+    /**
+     * Pushes the given card to the end of the hand queue
+     * @param card The card that will be put in the hand
+     */
+    public void pushCard(Card card) {
+        hand.add(card);
     }
 
     /**
@@ -148,7 +171,7 @@ public class Player {
         if (newCardDenom == playerNumber) {
             preferredcount ++;
         } else {
-            hand.add(newCard);
+            this.pushCard(newCard);
         }
 
         int oldCardDenom = this.discardCard();

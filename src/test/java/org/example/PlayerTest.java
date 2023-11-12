@@ -30,6 +30,18 @@ class PlayerTest {
     }
 
     @Test
+    void pushCard() {
+        var testInputDeck = new Deck(1);
+        var testOutputDeck = new Deck(2);
+        Card testCard = new Card(1);
+
+        // Test that card can be added to hand
+        var TestPlayer = new Player(1, testInputDeck, testOutputDeck);
+        TestPlayer.pushCard(testCard);
+        assertEquals("1 ", TestPlayer.createPrintableHand());
+    }
+
+    @Test
     void createTextFile() {
         var testInputDeck = new Deck(1);
         var testOutputDeck = new Deck(2);
