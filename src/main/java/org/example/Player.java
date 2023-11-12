@@ -66,6 +66,19 @@ public class Player {
     }
 
     /**
+     * Removes all the preferred cards from the initial hand so 
+     * they will not be discarded
+     */
+    public void removePreferred() {
+        for (Card c : hand) {
+            if (c.getDenomination() == playerNumber) {
+                preferredcount++;
+                hand.remove(c);
+            }
+        }
+    }
+
+    /**
      * Draws card from input deck
      * @return newly drawn card
      */
@@ -125,8 +138,10 @@ public class Player {
         if (this.preCheck()) {
             hasWon = true;
             return hasWon;
+        } else {
+            this.removePreferred();
         }
-        
+
         Card newCard = this.drawCard();
         int newCardDenom = newCard.getDenomination();
 
