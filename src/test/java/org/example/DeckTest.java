@@ -53,4 +53,10 @@ class DeckTest {
         assertEquals(3, TestDeck.dealNextCard().getDenomination());
         assertNull(TestDeck.dealNextCard());
     }
+
+    @Test
+    void getDeckNumber() {
+        var TestDeck = new Deck(1);
+        assertEquals(1, TestDeck.getDeckNumber());
+    }
 }
