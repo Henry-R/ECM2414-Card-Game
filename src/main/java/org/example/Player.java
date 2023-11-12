@@ -1,8 +1,6 @@
 package org.example;
 import java.util.Queue;
-import java.util.ArrayDeque;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -50,6 +48,21 @@ public class Player {
         } catch (IOException e) {
             return null;
       }
+    }
+
+    /**
+     * Checks if the hand contains 4 of the same value cards
+     * @return boolean of whether the player has won immediately or not
+     */
+    public boolean preCheck() {
+        boolean hasWon = true;
+        int n = hand.peek().getDenomination();
+        for (Card c : hand) {
+            if (c.getDenomination() != n) {
+                hasWon = false;
+            }
+        }
+        return hasWon;
     }
 
     /**
@@ -108,7 +121,12 @@ public class Player {
      * @return whether the player has now won after this play
     */
     public boolean play() {
-        boolean hasWon = false ;
+        boolean hasWon = false;
+        if (this.preCheck()) {
+            hasWon = true;
+            return hasWon;
+        }
+        
         Card newCard = this.drawCard();
         int newCardDenom = newCard.getDenomination();
 
@@ -123,7 +141,7 @@ public class Player {
         if (preferredcount == 4) {
             hasWon = true;
         }
-        
+    
         return hasWon;
     }
 
