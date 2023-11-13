@@ -2,14 +2,10 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Arrays;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerTest {
@@ -39,17 +35,6 @@ class PlayerTest {
         var TestPlayer = new Player(1, testInputDeck, testOutputDeck);
         TestPlayer.pushCard(testCard);
         assertEquals("1 ", TestPlayer.createPrintableHand());
-    }
-
-    @Test
-    void createTextFile() {
-        var testInputDeck = new Deck(1);
-        var testOutputDeck = new Deck(2);
-        Queue<Card> testHand = new LinkedList<>();
-
-        // Test that file has been created
-        var TestPlayer = new Player(1, testInputDeck, testOutputDeck, testHand);
-        assertEquals("player1_output.txt", TestPlayer.createTextFile());
     }
 
     @Test
@@ -138,10 +123,9 @@ class PlayerTest {
         testHand.add(new Card(3));
         testHand.add(new Card(4));
 
-        // Test that the printable hand is the correct representation of the current hand
+        // Test that the write to file is successful
         var TestPlayer = new Player(1, testInputDeck, testOutputDeck, testHand);
-
-        //TODO: finish this test, maybe do a writeToFile and then read to check
+        assertEquals(true, TestPlayer.writeToFile(1, 2));
     }
 
     @Test
@@ -177,7 +161,7 @@ class PlayerTest {
         testHand3.add(new Card(1));
         testHand3.add(new Card(1));
         var TestPlayer3 = new Player(1, testInputDeck, testOutputDeck, testHand3);
-        assertEquals(false, TestPlayer2.play());
+        assertEquals(false, TestPlayer3.play());
         assertEquals(2, testOutputDeck.dealNextCard().getDenomination());
     }
 }

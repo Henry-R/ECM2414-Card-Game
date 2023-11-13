@@ -1,8 +1,5 @@
 package org.example;
 import java.util.Queue;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 
 public class Player {
     private final int playerNumber;
@@ -10,8 +7,7 @@ public class Player {
     private final Deck outputdeck;
     private Queue<Card> hand;
     private int preferredcount;
-    private final String filename;
-    private final File textFile;
+    final TextFile textFile;
 
     /**
      * Constructs the Player with a given input deck, output deck and initial hand
@@ -24,8 +20,7 @@ public class Player {
         inputdeck = id;
         outputdeck = od;
         preferredcount = 0;
-        filename = "player" +playerNumber+ "_output.txt";
-        textFile = createTextFile();
+        textFile = new TextFile("player" +playerNumber+ "_output.txt");
     }
 
     /**
@@ -41,8 +36,7 @@ public class Player {
         outputdeck = od;
         hand = h;
         preferredcount = 0;
-        filename = "player" +playerNumber+ "_output.txt";
-        textFile = createTextFile();
+        textFile = new TextFile("player" +playerNumber+ "_output.txt");
     }
 
     /**
@@ -51,26 +45,6 @@ public class Player {
      */
     public void pushCard(Card card) {
         hand.add(card);
-    }
-
-    /**
-     * Creates output text file for the player
-     * @param playerNumber
-     * @return the text file object
-     */
-    public File createTextFile() {
-        try{
-            File textFile = new File(filename);
-            if (textFile.createNewFile()) {
-                return textFile;
-            } else {
-                textFile.delete();
-                textFile.createNewFile();
-                return textFile;
-            }
-        } catch (IOException e) {
-            return null;
-      }
     }
 
     /**
@@ -141,14 +115,11 @@ public class Player {
      * @param nCard newly drawn card denomination
      * @param oCard newly discarded card denomination
      */
-    public void writeToFile(int nCard, int oCard){
-        try {
-            FileWriter myWriter = new FileWriter(filename);
-            myWriter.write("player " +playerNumber+ " draws a " +nCard+ " from deck " +inputdeck.getDeckNumber()+ 
+    public boolean writeToFile(int nCard, int oCard) {
+        String currentPlay = "player " +playerNumber+ " draws a " +nCard+ " from deck " +inputdeck.getDeckNumber()+ 
                             "\nplayer " +playerNumber+ " discards a " +oCard+ " to deck " +outputdeck.getDeckNumber()+ 
-                            "\nplayer" +playerNumber+ " current hand is " +this.createPrintableHand());
-            myWriter.close();
-        } catch (IOException e) {}
+                            "\nplayer" +playerNumber+ " current hand is " +this.createPrintableHand();
+        return textFile.write(currentPlay);
     }
 
     /** 
