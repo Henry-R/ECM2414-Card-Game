@@ -69,10 +69,10 @@ public class Player {
      * they will not be discarded
      */
     public void removePreferred() {
-        for (Card c : hand) {
-            if (c.getDenomination() == playerNumber) {
+        for (var it = hand.iterator(); it.hasNext();) {
+            if (it.next().getDenomination() == playerNumber) {
                 preferredcount++;
-                hand.remove(c);
+                it.remove();
             }
         }
     }

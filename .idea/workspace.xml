@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="slightly cleaned up CardReader.getCardsFromFile">
+    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Fixed Player constructor not initializing hand">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CardGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CardGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DeckTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/DeckTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/PlayerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,11 +25,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -56,18 +56,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -80,16 +80,8 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.java in CardGame">
-    <configuration name="All in CardGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CardGame" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CardReaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.PlayerTest.removePreferred">
+    <configuration name="PlayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CardGame" />
       <extension name="coverage">
         <pattern>
@@ -98,13 +90,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.CardReaderTest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.PlayerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CardReaderTest.getCards" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerTest.play" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CardGame" />
       <extension name="coverage">
         <pattern>
@@ -113,14 +105,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.CardReaderTest" />
-      <option name="METHOD_NAME" value="getCards" />
+      <option name="MAIN_CLASS_NAME" value="org.example.PlayerTest" />
+      <option name="METHOD_NAME" value="play" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CardReaderTest.success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerTest.preCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CardGame" />
       <extension name="coverage">
         <pattern>
@@ -129,8 +121,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.CardReaderTest" />
-      <option name="METHOD_NAME" value="success" />
+      <option name="MAIN_CLASS_NAME" value="org.example.PlayerTest" />
+      <option name="METHOD_NAME" value="preCheck" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerTest.removePreferred" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CardGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.PlayerTest" />
+      <option name="METHOD_NAME" value="removePreferred" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -146,11 +154,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PlayerTest.removePreferred" />
+        <item itemvalue="JUnit.PlayerTest" />
+        <item itemvalue="JUnit.PlayerTest.play" />
         <item itemvalue="JUnit.java in CardGame" />
-        <item itemvalue="JUnit.All in CardGame" />
-        <item itemvalue="JUnit.CardReaderTest.getCards" />
-        <item itemvalue="JUnit.CardReaderTest.success" />
-        <item itemvalue="JUnit.CardReaderTest" />
+        <item itemvalue="JUnit.PlayerTest.preCheck" />
       </list>
     </recent_temporary>
   </component>
@@ -289,7 +297,21 @@
       <option name="project" value="LOCAL" />
       <updated>1699537084033</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="fixed DeckTest to include new deck number">
+      <created>1699553641103</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1699553641103</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Fixed Player constructor not initializing hand">
+      <created>1699970490328</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1699970490328</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -335,6 +357,18 @@
     <MESSAGE value="deck file from project spec" />
     <MESSAGE value="slightly cleaned up CardReader constructor" />
     <MESSAGE value="slightly cleaned up CardReader.getCardsFromFile" />
-    <option name="LAST_COMMIT_MESSAGE" value="slightly cleaned up CardReader.getCardsFromFile" />
+    <MESSAGE value="fixed DeckTest to include new deck number" />
+    <MESSAGE value="Fixed Player constructor not initializing hand" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Player constructor not initializing hand" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.ConcurrentModificationException" package="java.util" />
+          <option name="timeStamp" value="4" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
