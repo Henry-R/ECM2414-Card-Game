@@ -156,5 +156,7 @@ public class Player {
         return hasWon;
     }
 
-
+    public int getPlayerNumber() {
+        return playerNumber;
+    }
 }
