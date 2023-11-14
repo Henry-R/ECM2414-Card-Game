@@ -1,4 +1,5 @@
 package org.example;
+import java.util.ArrayDeque;
 import java.util.Queue;
 
 public class Player {
@@ -19,6 +20,7 @@ public class Player {
         playerNumber = pd;
         inputdeck = id;
         outputdeck = od;
+        hand = new ArrayDeque<>();
         preferredcount = 0;
         textFile = new TextFile("player" +playerNumber+ "_output.txt");
     }
