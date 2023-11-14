@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Fixed Player constructor not initializing hand">
+    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Fixed ConcurrentModificationException being thrown in Player">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/PlayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CardGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CardGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CardReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CardReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/deck1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/deck1.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +81,20 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PlayerTest.removePreferred">
+  <component name="RunManager" selected="Application.CardGame">
+    <configuration name="CardGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.CardGame" />
+      <module name="CardGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PlayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CardGame" />
       <extension name="coverage">
@@ -112,22 +126,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest.preCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CardGame" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.PlayerTest" />
-      <option name="METHOD_NAME" value="preCheck" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="PlayerTest.removePreferred" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CardGame" />
       <extension name="coverage">
@@ -154,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CardGame" />
         <item itemvalue="JUnit.PlayerTest.removePreferred" />
         <item itemvalue="JUnit.PlayerTest" />
         <item itemvalue="JUnit.PlayerTest.play" />
         <item itemvalue="JUnit.java in CardGame" />
-        <item itemvalue="JUnit.PlayerTest.preCheck" />
       </list>
     </recent_temporary>
   </component>
@@ -311,7 +309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699970490328</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Fixed ConcurrentModificationException being thrown in Player">
+      <created>1699971413350</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1699971413350</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -359,7 +364,8 @@
     <MESSAGE value="slightly cleaned up CardReader.getCardsFromFile" />
     <MESSAGE value="fixed DeckTest to include new deck number" />
     <MESSAGE value="Fixed Player constructor not initializing hand" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Player constructor not initializing hand" />
+    <MESSAGE value="Fixed ConcurrentModificationException being thrown in Player" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed ConcurrentModificationException being thrown in Player" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

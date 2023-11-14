@@ -2,14 +2,13 @@ package org.example;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Reads cards from a text file and provides methods for safely retrieving these cards
  */
 public class CardReader {
-    private ArrayList<Card> cards;
+    private ArrayDeque<Card> cards;
     private boolean readSuccessful;
 
     /**
@@ -25,7 +24,7 @@ public class CardReader {
             readSuccessful = true;
         } catch (FileNotFoundException e) {
             // No cards if file not found
-            cards = new ArrayList<>();
+            cards = new ArrayDeque<>();
             readSuccessful = false;
         }
     }
@@ -37,8 +36,8 @@ public class CardReader {
      * @param reader The file reader used to read the file
      * @return A list of Card objects
      */
-    private ArrayList<Card> getCardsFromFile(Scanner reader) {
-        var cards = new ArrayList<Card>();
+    private ArrayDeque<Card> getCardsFromFile(Scanner reader) {
+        var cards = new ArrayDeque<Card>();
         while (reader.hasNextLine()) {
             var cardStr = reader.nextLine();
             try {
@@ -57,7 +56,13 @@ public class CardReader {
         return readSuccessful;
     }
 
-    public ArrayList<Card> getCards() {
+    public Collection<Card> getCards() {
         return cards;
+    }
+
+    public int getCardCount() { return cards.size(); }
+
+    public Card nextCard() {
+        return cards.pop();
     }
 }
