@@ -1,5 +1,6 @@
 package org.example;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -18,9 +19,11 @@ public class CardGame
         return in.nextLine();
     }
 
-    private static ArrayList<Player> getPlayersFromPack(int player_count, String packURL) {
+    private static ArrayList<Player> getPlayersFromPack(int player_count, String packURL)
+            throws InsufficientCardException, FileNotFoundException {
         final int PLAYER_HAND_SIZE = 4;
         final int DECK_SIZE = 4;
+        final int TOTAL_SIZE = PLAYER_HAND_SIZE + DECK_SIZE;
         ArrayList<Player> players = new ArrayList<>();
         ArrayList<Deck>   decks   = new ArrayList<>();
 
@@ -37,11 +40,9 @@ public class CardGame
 
         // Deal cards to newly constructed players and decks
         var initialCards = new CardReader(packURL);
-        if (!initialCards.success()) {
-            System.out.println("Failed to read cards from " + packURL + " file!");
-        }
-        else if (initialCards.getCardCount() < player_count * (PLAYER_HAND_SIZE + DECK_SIZE)) {
-            System.out.println("Not enough cards in " + packURL + "!");
+        if (initialCards.getCardCount() < player_count * TOTAL_SIZE) {
+            throw new InsufficientCardException("Not enough cards in " + packURL +
+                    "! Expected " + TOTAL_SIZE + " but got " + initialCards.getCardCount());
         }
         else {
             // First deal to players
@@ -69,19 +70,17 @@ public class CardGame
 
     public static void main( String[] args )
     {
-        // The number of players, n
-        int player_count;
-        // The file URL of the initial card pack
-        String pack_location;
-        ArrayList<Player> players;
+        var player_count = 4;//getValidPlayerCount();
+        var pack_location = "packs/one.txt";//getValidPackLocation();
+        try {
+            ArrayList<Player> players = getPlayersFromPack(player_count, pack_location);
 
-        player_count = 4;//getValidPlayerCount();
-        pack_location = "packs/one.txt";//getValidPackLocation();
-
-        players = getPlayersFromPack(player_count, pack_location);
-
-        // Main game loop
-        playRound(players);
+            // Main game loop
+            playRound(players);
+        }
+        catch (FileNotFoundException | InsufficientCardException e) {
+            System.out.println(e.getMessage());
+        }
 
         System.out.println("Hello, world!");
     }

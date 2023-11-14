@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Fixed ConcurrentModificationException being thrown in Player">
+    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="getPlayersFromPack now throws exceptions instead of silently failing">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/InsufficientCardException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CardGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CardGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CardReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CardReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/deck1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/deck1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/CardReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/CardReaderTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -81,7 +81,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CardGame">
+  <component name="RunManager" selected="JUnit.java in CardGame">
     <configuration name="CardGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.CardGame" />
       <module name="CardGame" />
@@ -152,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.java in CardGame" />
         <item itemvalue="Application.CardGame" />
         <item itemvalue="JUnit.PlayerTest.removePreferred" />
         <item itemvalue="JUnit.PlayerTest" />
         <item itemvalue="JUnit.PlayerTest.play" />
-        <item itemvalue="JUnit.java in CardGame" />
       </list>
     </recent_temporary>
   </component>
@@ -316,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699971413350</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="CardGame creates decks and players round-robin fashion and deals cards correctly">
+      <created>1699975049725</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1699975049725</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -365,7 +372,9 @@
     <MESSAGE value="fixed DeckTest to include new deck number" />
     <MESSAGE value="Fixed Player constructor not initializing hand" />
     <MESSAGE value="Fixed ConcurrentModificationException being thrown in Player" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed ConcurrentModificationException being thrown in Player" />
+    <MESSAGE value="CardGame creates decks and players round-robin fashion and deals cards correctly" />
+    <MESSAGE value="getPlayersFromPack now throws exceptions instead of silently failing" />
+    <option name="LAST_COMMIT_MESSAGE" value="getPlayersFromPack now throws exceptions instead of silently failing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
