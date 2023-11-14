@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.Exceptions.InsufficientCardException;
+
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
@@ -59,13 +61,20 @@ public class CardGame
         return players;
     }
 
-    private static void playRound(List<Player> players) {
+    private static int playRound(List<Player> players) {
         // Every player makes a play
         for (var player : players) {
             player.play();
         }
         // Check if any players have won
-
+        for (var player : players) {
+            // TODO maybe rename Player.preCheck to Player.hasWon to be clearer?
+            if (player.preCheck()) {
+                return player.getPlayerNumber();
+            }
+        }
+        // No one has won yet
+        return 0;
     }
 
     public static void main( String[] args )
@@ -76,12 +85,17 @@ public class CardGame
             ArrayList<Player> players = getPlayersFromPack(player_count, pack_location);
 
             // Main game loop
-            playRound(players);
+            int winner = 0;
+            while (winner == 0) {
+                // If someone has won
+                winner = playRound(players);
+                if (winner > 0) {
+                    System.out.println("Player " + winner + " wins");
+                }
+            }
         }
         catch (FileNotFoundException | InsufficientCardException e) {
             System.out.println(e.getMessage());
         }
-
-        System.out.println("Hello, world!");
     }
 }
