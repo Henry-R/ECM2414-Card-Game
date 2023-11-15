@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="getPlayersFromPack now throws exceptions instead of silently failing">
+    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="The card packs used for testing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CardGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CardGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/InsufficientCardException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Exceptions/InsufficientCardException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/CardReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/CardReaderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test_bad_deck.txt" beforeDir="false" afterPath="$PROJECT_DIR$/packs/test_bad_deck.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test_deck.txt" beforeDir="false" afterPath="$PROJECT_DIR$/packs/test_deck.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +74,7 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\henry\IdeaProjects\CardGame\packs" />
       <recent name="C:\Users\henry\IdeaProjects\CardGame\src\main\resources" />
       <recent name="C:\Users\henry\IdeaProjects\CardGame\src\test\resources" />
     </key>
@@ -84,7 +85,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CardGame">
+  <component name="RunManager" selected="JUnit.CardReaderTest">
     <configuration name="CardGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.CardGame" />
       <module name="CardGame" />
@@ -94,6 +95,21 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CardReaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CardGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.CardReaderTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -109,22 +125,6 @@
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.PlayerTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlayerTest.play" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CardGame" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.Exceptions.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.PlayerTest" />
-      <option name="METHOD_NAME" value="play" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -155,11 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CardReaderTest" />
         <item itemvalue="Application.CardGame" />
         <item itemvalue="JUnit.java in CardGame" />
         <item itemvalue="JUnit.PlayerTest.removePreferred" />
         <item itemvalue="JUnit.PlayerTest" />
-        <item itemvalue="JUnit.PlayerTest.play" />
       </list>
     </recent_temporary>
   </component>
@@ -333,7 +333,28 @@
       <option name="project" value="LOCAL" />
       <updated>1699976088201</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Added getPlayerNumber">
+      <created>1699976851517</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1699976851517</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Basic game functionality">
+      <created>1699976860780</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1699976860780</updated>
+    </task>
+    <task id="LOCAL-00026" summary="The card packs used for testing">
+      <created>1699976884356</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1699976884356</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -360,8 +381,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Inital Commit" />
-    <MESSAGE value="Added Card and Player class shells" />
     <MESSAGE value="Added Card and Player class shells with some basic code that tests they construct" />
     <MESSAGE value="Added basic deck class" />
     <MESSAGE value="Added base functionality to Deck and Card classes" />
@@ -384,7 +403,10 @@
     <MESSAGE value="Fixed ConcurrentModificationException being thrown in Player" />
     <MESSAGE value="CardGame creates decks and players round-robin fashion and deals cards correctly" />
     <MESSAGE value="getPlayersFromPack now throws exceptions instead of silently failing" />
-    <option name="LAST_COMMIT_MESSAGE" value="getPlayersFromPack now throws exceptions instead of silently failing" />
+    <MESSAGE value="Added getPlayerNumber" />
+    <MESSAGE value="Basic game functionality" />
+    <MESSAGE value="The card packs used for testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="The card packs used for testing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -393,11 +415,6 @@
           <properties class="java.util.ConcurrentModificationException" package="java.util" />
           <option name="timeStamp" value="4" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/CardGame.java</url>
-          <line>82</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
