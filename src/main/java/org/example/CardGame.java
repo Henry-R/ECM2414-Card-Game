@@ -68,7 +68,6 @@ public class CardGame
         }
         // Check if any players have won
         for (var player : players) {
-            // TODO maybe rename Player.preCheck to Player.hasWon to be clearer?
             if (player.preCheck()) {
                 return player.getPlayerNumber();
             }
