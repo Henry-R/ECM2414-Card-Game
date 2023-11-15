@@ -65,6 +65,10 @@ public class Player {
         return true;
     }
 
+    public boolean hasWon() {
+        return preferredcount == 4 || preCheck();
+    }
+
     /**
      * Removes all the preferred cards from the initial hand, so
      * they will not be discarded

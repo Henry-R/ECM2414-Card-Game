@@ -22,7 +22,7 @@ public class CardGame
     }
 
     private static ArrayList<Player> getPlayersFromPack(int player_count, String packURL)
-            throws InsufficientCardException, FileNotFoundException, InterruptedException {
+            throws InsufficientCardException, FileNotFoundException {
         final int PLAYER_HAND_SIZE = 4;
         final int DECK_SIZE = 4;
         final int TOTAL_SIZE = PLAYER_HAND_SIZE + DECK_SIZE;
@@ -68,7 +68,8 @@ public class CardGame
         }
         // Check if any players have won
         for (var player : players) {
-            if (player.allCardsSame()) {
+            // TODO maybe rename Player.preCheck to Player.hasWon to be clearer?
+            if (player.hasWon()) {
                 return player.getPlayerNumber();
             }
         }
@@ -93,7 +94,7 @@ public class CardGame
                 }
             }
         }
-        catch (FileNotFoundException | InsufficientCardException | InterruptedException e) {
+        catch (FileNotFoundException | InsufficientCardException e) {
             System.out.println(e.getMessage());
         }
     }
