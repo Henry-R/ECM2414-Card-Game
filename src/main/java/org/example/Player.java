@@ -4,10 +4,10 @@ import java.util.Queue;
 
 public class Player {
     private final int playerNumber;
-    private final Deck inputdeck;
-    private final Deck outputdeck;
-    private Queue<Card> hand;
-    private int preferredcount;
+    private final Deck inputDeck;
+    private final Deck outputDeck;
+    private final Queue<Card> hand;
+    private int preferredCount;
     final TextFile textFile;
 
     /**
@@ -18,10 +18,10 @@ public class Player {
      */
     public Player(int pd, Deck id, Deck od) {
         playerNumber = pd;
-        inputdeck = id;
-        outputdeck = od;
+        inputDeck = id;
+        outputDeck = od;
         hand = new ArrayDeque<>();
-        preferredcount = 0;
+        preferredCount = 0;
         textFile = new TextFile("player" +playerNumber+ "_output.txt");
     }
 
@@ -34,10 +34,10 @@ public class Player {
      */
     public Player(int pd, Deck id, Deck od, Queue<Card> h) {
         playerNumber = pd;
-        inputdeck = id;
-        outputdeck = od;
+        inputDeck = id;
+        outputDeck = od;
         hand = h;
-        preferredcount = 0;
+        preferredCount = 0;
         textFile = new TextFile("player" +playerNumber+ "_output.txt");
     }
 
@@ -54,24 +54,25 @@ public class Player {
      * @return boolean of whether the player has won immediately or not
      */
     public boolean preCheck() {
-        boolean hasWon = true;
+        // Check all four cards are the same
+        assert hand.peek() != null;
         int n = hand.peek().getDenomination();
         for (Card c : hand) {
             if (c.getDenomination() != n) {
-                hasWon = false;
+                return false;
             }
         }
-        return hasWon;
+        return true;
     }
 
     /**
-     * Removes all the preferred cards from the initial hand so 
+     * Removes all the preferred cards from the initial hand, so
      * they will not be discarded
      */
     public void removePreferred() {
         for (var it = hand.iterator(); it.hasNext();) {
             if (it.next().getDenomination() == playerNumber) {
-                preferredcount++;
+                preferredCount++;
                 it.remove();
             }
         }
@@ -82,8 +83,7 @@ public class Player {
      * @return newly drawn card
      */
     public Card drawCard() throws InterruptedException {
-        Card drawnCard = inputdeck.dealNextCard();
-        return drawnCard;
+        return inputDeck.dealNextCard();
     }
 
     /**
@@ -92,7 +92,7 @@ public class Player {
      */
     public int discardCard() throws InterruptedException {
         Card discardedCard = hand.remove();
-        outputdeck.pushCard(discardedCard);
+        outputDeck.pushCard(discardedCard);
         return discardedCard.getDenomination();
     }
 
@@ -102,14 +102,12 @@ public class Player {
      * @return string of a representation of the denomination of the cards in the players hand
      */
     public String createPrintableHand() {
-        String printableHand = "";
-        for (int i = 0; i < preferredcount; i++) {
-            printableHand += "1 ";
-        }
+        StringBuilder printableHand = new StringBuilder();
+        printableHand.append("1 ".repeat(preferredCount));
         for(Card c : hand) { 
-            printableHand += String.valueOf(c.getDenomination()) + " ";
+            printableHand.append(c.getDenomination()).append(" ");
         }
-        return printableHand;
+        return printableHand.toString();
     }
 
     /**
@@ -118,8 +116,8 @@ public class Player {
      * @param oCard newly discarded card denomination
      */
     public boolean writeToFile(int nCard, int oCard) {
-        String currentPlay = "player " +playerNumber+ " draws a " +nCard+ " from deck " +inputdeck.getDeckNumber()+ 
-                            "\nplayer " +playerNumber+ " discards a " +oCard+ " to deck " +outputdeck.getDeckNumber()+ 
+        String currentPlay = "player " +playerNumber+ " draws a " +nCard+ " from deck " + inputDeck.getDeckNumber()+
+                            "\nplayer " +playerNumber+ " discards a " +oCard+ " to deck " + outputDeck.getDeckNumber()+
                             "\nplayer" +playerNumber+ " current hand is " +this.createPrintableHand();
         return textFile.write(currentPlay);
     }
@@ -130,35 +128,33 @@ public class Player {
      * @return whether the player has now won after this play
     */
     public boolean play() {
-        boolean hasWon = false;
         if (this.preCheck()) {
-            hasWon = true;
-            return hasWon;
+            return true;
         } else {
-            this.removePreferred();
+            removePreferred();
         }
 
         try {
-            Card newCard = this.drawCard();
-            int newCardDenom = newCard.getDenomination();
+            Card newCard = drawCard();
+            int newCardDenomination = newCard.getDenomination();
 
-            if (newCardDenom == playerNumber) {
-                preferredcount++;
+            if (newCardDenomination == playerNumber) {
+                preferredCount++;
             } else {
                 this.pushCard(newCard);
             }
 
-            int oldCardDenom = this.discardCard();
-            this.writeToFile(newCardDenom, oldCardDenom);
-            if (preferredcount == 4) {
-                hasWon = true;
+            int oldCardDenomination = discardCard();
+            this.writeToFile(newCardDenomination, oldCardDenomination);
+            if (preferredCount == 4) {
+                return true;
             }
         } catch (InterruptedException e) {
             // Interrupted, didn't win
             return false;
         }
     
-        return hasWon;
+        return false;
     }
 
     public int getPlayerNumber() {
