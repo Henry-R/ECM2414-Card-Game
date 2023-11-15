@@ -15,13 +15,13 @@ public class PlayerJudge {
             winningPlayer = playerID;
         }
     }
-    public boolean playerHasWon() {
+    public synchronized boolean playerHasWon() {
         return winningPlayer != -1;
     }
-    public int getWinningTurn() {
+    public synchronized int getWinningTurn() {
         return winningTurn;
     }
-    public int getWinningPlayer() {
+    public synchronized int getWinningPlayer() {
         return winningPlayer;
     }
 }

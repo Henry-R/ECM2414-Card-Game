@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="removed unnecessary Player member variables">
+    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Players now output all their hand states to file again">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PlayerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PlayerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PlayerJudge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PlayerJudge.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -409,7 +409,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700088018556</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Players now output all their hand states to file again">
+      <created>1700088313812</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1700088313812</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -436,7 +443,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Test when Deck given empty card collection" />
     <MESSAGE value="Deckreader class and tests" />
     <MESSAGE value="moved CardReader test files to resources" />
     <MESSAGE value="Test for CardReader failure" />
@@ -461,7 +467,8 @@
     <MESSAGE value="added more test decks" />
     <MESSAGE value="Edited pack two so player 2 wins instead" />
     <MESSAGE value="removed unnecessary Player member variables" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed unnecessary Player member variables" />
+    <MESSAGE value="Players now output all their hand states to file again" />
+    <option name="LAST_COMMIT_MESSAGE" value="Players now output all their hand states to file again" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
