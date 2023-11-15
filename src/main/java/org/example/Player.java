@@ -53,7 +53,7 @@ public class Player {
      * Checks if the hand contains 4 of the same value cards
      * @return boolean of whether the player has won immediately or not
      */
-    public boolean preCheck() {
+    public boolean allCardsSame() {
         // Check all four cards are the same
         assert hand.peek() != null;
         int n = hand.peek().getDenomination();
@@ -119,6 +119,7 @@ public class Player {
         String currentPlay = "player " +playerNumber+ " draws a " +nCard+ " from deck " + inputDeck.getDeckNumber()+
                             "\nplayer " +playerNumber+ " discards a " +oCard+ " to deck " + outputDeck.getDeckNumber()+
                             "\nplayer" +playerNumber+ " current hand is " +this.createPrintableHand();
+        // TODO do all file writes when thread exits. Store current contents of file until last minute
         return textFile.write(currentPlay);
     }
 
@@ -128,7 +129,7 @@ public class Player {
      * @return whether the player has now won after this play
     */
     public boolean play() {
-        if (this.preCheck()) {
+        if (this.allCardsSame()) {
             return true;
         } else {
             removePreferred();

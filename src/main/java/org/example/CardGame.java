@@ -68,7 +68,7 @@ public class CardGame
         }
         // Check if any players have won
         for (var player : players) {
-            if (player.preCheck()) {
+            if (player.allCardsSame()) {
                 return player.getPlayerNumber();
             }
         }

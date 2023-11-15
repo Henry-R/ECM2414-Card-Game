@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="removed unnecessary TODO">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="cleaned up all warnings in Player class">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -378,7 +377,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700077853845</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="cleaned up all warnings in Player class">
+      <created>1700078276620</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1700078276620</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -405,7 +411,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added base functionality to Deck and Card classes" />
     <MESSAGE value="Replaced Deck class queue with thread safe alternative" />
     <MESSAGE value="Added docstrings to Card and Deck classes" />
     <MESSAGE value="Removed JUnit test 4 as a dependency and added JUnit test 5 with tests for Deck and Card" />
@@ -430,7 +435,8 @@
     <MESSAGE value="The card packs used for testing" />
     <MESSAGE value="Converted deck to use BlockingQueue" />
     <MESSAGE value="removed unnecessary TODO" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed unnecessary TODO" />
+    <MESSAGE value="cleaned up all warnings in Player class" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaned up all warnings in Player class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

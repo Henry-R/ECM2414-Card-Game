@@ -2,10 +2,8 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Collection;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -50,7 +48,7 @@ class PlayerTest {
 
         //Test player has won if all cards have same value
         var TestPlayer = new Player(1, testInputDeck, testOutputDeck, testHand);
-        assertEquals(true, TestPlayer.preCheck());
+        assertEquals(true, TestPlayer.allCardsSame());
     }
 
     @Test
