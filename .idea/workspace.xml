@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="cleaned up all warnings in Player class">
+    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CardGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CardGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,11 +23,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -356,35 +353,21 @@
       <option name="project" value="LOCAL" />
       <updated>1699976884356</updated>
     </task>
-    <task id="LOCAL-00027" summary="Converted deck to use BlockingQueue">
-      <created>1700077353609</created>
+    <task id="LOCAL-00027" summary="moved test decks from resources to target dir">
+      <created>1700048925910</created>
       <option name="number" value="00027" />
       <option name="presentableId" value="LOCAL-00027" />
       <option name="project" value="LOCAL" />
-      <updated>1700077353609</updated>
+      <updated>1700048925910</updated>
     </task>
-    <task id="LOCAL-00028" summary="Converted deck to use BlockingQueue">
-      <created>1700077570346</created>
+    <task id="LOCAL-00028" summary="created Player.hasWon">
+      <created>1700078673859</created>
       <option name="number" value="00028" />
       <option name="presentableId" value="LOCAL-00028" />
       <option name="project" value="LOCAL" />
-      <updated>1700077570346</updated>
+      <updated>1700078673859</updated>
     </task>
-    <task id="LOCAL-00029" summary="removed unnecessary TODO">
-      <created>1700077853845</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1700077853845</updated>
-    </task>
-    <task id="LOCAL-00030" summary="cleaned up all warnings in Player class">
-      <created>1700078276620</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1700078276620</updated>
-    </task>
-    <option name="localTasksCounter" value="31" />
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -398,7 +381,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="message_parsing" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>
@@ -411,6 +394,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added base functionality to Deck and Card classes" />
     <MESSAGE value="Replaced Deck class queue with thread safe alternative" />
     <MESSAGE value="Added docstrings to Card and Deck classes" />
     <MESSAGE value="Removed JUnit test 4 as a dependency and added JUnit test 5 with tests for Deck and Card" />
@@ -433,10 +417,9 @@
     <MESSAGE value="Added getPlayerNumber" />
     <MESSAGE value="Basic game functionality" />
     <MESSAGE value="The card packs used for testing" />
-    <MESSAGE value="Converted deck to use BlockingQueue" />
-    <MESSAGE value="removed unnecessary TODO" />
-    <MESSAGE value="cleaned up all warnings in Player class" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleaned up all warnings in Player class" />
+    <MESSAGE value="moved test decks from resources to target dir" />
+    <MESSAGE value="created Player.hasWon" />
+    <option name="LAST_COMMIT_MESSAGE" value="created Player.hasWon" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -22,7 +22,7 @@ public class CardGame
     }
 
     private static ArrayList<Player> getPlayersFromPack(int player_count, String packURL)
-            throws InsufficientCardException, FileNotFoundException {
+            throws InsufficientCardException, FileNotFoundException, InterruptedException {
         final int PLAYER_HAND_SIZE = 4;
         final int DECK_SIZE = 4;
         final int TOTAL_SIZE = PLAYER_HAND_SIZE + DECK_SIZE;
@@ -94,7 +94,7 @@ public class CardGame
                 }
             }
         }
-        catch (FileNotFoundException | InsufficientCardException e) {
+        catch (FileNotFoundException | InsufficientCardException | InterruptedException e) {
             System.out.println(e.getMessage());
         }
     }

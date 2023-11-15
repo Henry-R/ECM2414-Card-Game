@@ -66,7 +66,7 @@ public class Player {
     }
 
     public boolean hasWon() {
-        return preferredcount == 4 || preCheck();
+        return preferredCount == 4 || allCardsSame();
     }
 
     /**
