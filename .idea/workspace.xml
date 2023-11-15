@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Fixed errors after cherry-picking hasWon from main">
+    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Created PlayerHandler to handle creating of threads. Created PlayerJudge to act as protected shared memory so Player objects can communicate wins">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/PlayerHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/PlayerJudge.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CardGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CardGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Player.java" afterDir="false" />
@@ -79,19 +81,20 @@
       <recent name="C:\Users\henry\IdeaProjects\CardGame\src\test\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.example" />
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.java in CardGame">
+  <component name="RunManager" selected="Application.CardGame">
     <configuration name="CardGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.CardGame" />
       <module name="CardGame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.Exceptions.*" />
+          <option name="PATTERN" value="org.example.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -118,7 +121,7 @@
       <module name="CardGame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.Exceptions.*" />
+          <option name="PATTERN" value="org.example.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -133,7 +136,7 @@
       <module name="CardGame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.Exceptions.*" />
+          <option name="PATTERN" value="org.example.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -155,10 +158,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CardGame" />
         <item itemvalue="JUnit.java in CardGame" />
         <item itemvalue="JUnit.PlayerTest" />
         <item itemvalue="JUnit.CardReaderTest" />
-        <item itemvalue="Application.CardGame" />
         <item itemvalue="JUnit.PlayerTest.removePreferred" />
       </list>
     </recent_temporary>
@@ -375,7 +378,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700078745933</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="rewrote Player.play() to simplify logic">
+      <created>1700080322935</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1700080322935</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -402,8 +412,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Replaced Deck class queue with thread safe alternative" />
-    <MESSAGE value="Added docstrings to Card and Deck classes" />
     <MESSAGE value="Removed JUnit test 4 as a dependency and added JUnit test 5 with tests for Deck and Card" />
     <MESSAGE value="Refactored method names to fit with naming convention" />
     <MESSAGE value="Added Deck constructor that creates deck with initial collection of cards" />
@@ -427,7 +435,9 @@
     <MESSAGE value="moved test decks from resources to target dir" />
     <MESSAGE value="created Player.hasWon" />
     <MESSAGE value="Fixed errors after cherry-picking hasWon from main" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed errors after cherry-picking hasWon from main" />
+    <MESSAGE value="rewrote Player.play() to simplify logic" />
+    <MESSAGE value="Created PlayerHandler to handle creating of threads. Created PlayerJudge to act as protected shared memory so Player objects can communicate wins" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created PlayerHandler to handle creating of threads. Created PlayerJudge to act as protected shared memory so Player objects can communicate wins" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -436,7 +446,19 @@
           <properties class="java.util.ConcurrentModificationException" package="java.util" />
           <option name="timeStamp" value="4" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Player.java</url>
+          <line>115</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="newCard.getDenomination()" language="JAVA" />
+        <watch expression="oldCard.getDenomination()" language="JAVA" />
+        <watch expression="preferredCount" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

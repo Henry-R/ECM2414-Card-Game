@@ -1,4 +1,5 @@
 package org.example;
+
 import java.util.ArrayDeque;
 import java.util.Queue;
 
@@ -6,8 +7,9 @@ public class Player implements Runnable {
     private final int playerNumber;
     private final Deck inputDeck;
     private final Deck outputDeck;
+    private final PlayerJudge judge;
     private final Queue<Card> hand;
-    final TextFile textFile;
+    private final StringBuilder fileOutput;
     int currentTurn;
     Boolean won;
     private int preferredCount;
@@ -19,12 +21,13 @@ public class Player implements Runnable {
      * @param id The deck for the player to draw cards from
      * @param od The deck for the player to discard cards to
      */
-    public Player(int pd, Deck id, Deck od) {
+    public Player(int pd, Deck id, Deck od, PlayerJudge j) {
         playerNumber = pd;
         inputDeck = id;
         outputDeck = od;
+        judge = j;
         hand = new ArrayDeque<>();
-        textFile = new TextFile("player" +playerNumber+ "_output.txt");
+        fileOutput = new StringBuilder();
         currentTurn = 1;
         won = false;
         preferredCount = 0;
@@ -34,7 +37,7 @@ public class Player implements Runnable {
      * Checks if the hand contains 4 of the same value cards
      * @return boolean of whether the player has won immediately or not
      */
-    public boolean allCardsSame() {
+    private boolean allCardsSame() {
         // Check all four cards are the same
         assert hand.peek() != null;
         int n = hand.peek().getDenomination();
@@ -46,7 +49,7 @@ public class Player implements Runnable {
         return true;
     }
 
-    public boolean hasWon() {
+    private boolean hasWon() {
         return preferredCount == 4 || allCardsSame();
     }
 
@@ -83,9 +86,9 @@ public class Player implements Runnable {
      * including the preferred values that are not in the hand queue
      * @return string of a representation of the denomination of the cards in the players hand
      */
-    public String createPrintableHand() {
+    private String createPrintableHand() {
         StringBuilder printableHand = new StringBuilder();
-        printableHand.append("1 ".repeat(preferredCount));
+        printableHand.append((playerNumber + " ").repeat(preferredCount));
         for(Card c : hand) { 
             printableHand.append(c.getDenomination()).append(" ");
         }
@@ -97,12 +100,10 @@ public class Player implements Runnable {
      * @param nCard newly drawn card denomination
      * @param oCard newly discarded card denomination
      */
-    public boolean writeToFile(int nCard, int oCard) {
-        String currentPlay = "player " +playerNumber+ " draws a " +nCard+ " from deck " + inputDeck.getDeckNumber()+
-                            "\nplayer " +playerNumber+ " discards a " +oCard+ " to deck " + outputDeck.getDeckNumber()+
-                            "\nplayer" +playerNumber+ " current hand is " +this.createPrintableHand();
-        // TODO do all file writes when thread exits. Store current contents of file until last minute
-        return textFile.write(currentPlay);
+    private String createPrintablePlay(int nCard, int oCard) {
+        return "player " + playerNumber + " draws a " + nCard + " from deck " + inputDeck.getDeckNumber() +
+                "\nplayer " + playerNumber + " discards a " + oCard + " to deck " + outputDeck.getDeckNumber() +
+                "\nplayer " + playerNumber + " current hand is " + createPrintableHand() + "\n";
     }
 
     /** 
@@ -111,18 +112,28 @@ public class Player implements Runnable {
     */
     private void play() {
         while (!won) {
+            if (judge.playerHasWon() && judge.getWinningTurn() <= currentTurn) {
+                // Taken more turns than the winner, so we'll never do better
+                // Exit thread
+                return;
+            }
+
             try {
                 var newCard = drawCard();
                 var oldCard = discardCard();
-                writeToFile(newCard.getDenomination(),
-                            oldCard.getDenomination());
+
+                var printablePlay = createPrintablePlay(
+                        newCard.getDenomination(),
+                        oldCard.getDenomination());
+                fileOutput.append(printablePlay);
             } catch (InterruptedException e) {
                 // Exit thread
                 return;
             }
             if (hasWon()) {
                 won = true;
-                // Player has won, no need to continue playing
+                // Notify other players this player has won
+                judge.newWinner(playerNumber, currentTurn);
                 // Exit thread
                 return;
             }
@@ -130,8 +141,9 @@ public class Player implements Runnable {
         }
     }
 
-    public int getPlayerNumber() {
-        return playerNumber;
+    public void printPlayHistory() {
+        var out = new TextFile("player" + playerNumber + "_output.txt");
+        out.write(fileOutput.toString());
     }
 
     @Override
