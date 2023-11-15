@@ -22,7 +22,7 @@ public class CardGame
     public static void main( String[] args )
     {
         var player_count = 4;//getValidPlayerCount();
-        var pack_location = "packs/one.txt";//getValidPackLocation();
+        var pack_location = "packs/two.txt";//getValidPackLocation();
         try {
             var playerHandler = new PlayerHandler(player_count, pack_location);
             int winner = playerHandler.playGame();
