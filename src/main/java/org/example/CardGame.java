@@ -64,7 +64,7 @@ public class CardGame
     private static int playRound(List<Player> players) {
         // Every player makes a play
         for (var player : players) {
-            player.play();
+            player.run();
         }
         // Check if any players have won
         for (var player : players) {

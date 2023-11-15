@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="">
+    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Fixed errors after cherry-picking hasWon from main">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CardGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CardGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/PlayerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,10 +156,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.java in CardGame" />
+        <item itemvalue="JUnit.PlayerTest" />
         <item itemvalue="JUnit.CardReaderTest" />
         <item itemvalue="Application.CardGame" />
         <item itemvalue="JUnit.PlayerTest.removePreferred" />
-        <item itemvalue="JUnit.PlayerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -367,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700078673859</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Fixed errors after cherry-picking hasWon from main">
+      <created>1700078745933</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1700078745933</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -394,7 +402,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added base functionality to Deck and Card classes" />
     <MESSAGE value="Replaced Deck class queue with thread safe alternative" />
     <MESSAGE value="Added docstrings to Card and Deck classes" />
     <MESSAGE value="Removed JUnit test 4 as a dependency and added JUnit test 5 with tests for Deck and Card" />
@@ -419,7 +426,8 @@
     <MESSAGE value="The card packs used for testing" />
     <MESSAGE value="moved test decks from resources to target dir" />
     <MESSAGE value="created Player.hasWon" />
-    <option name="LAST_COMMIT_MESSAGE" value="created Player.hasWon" />
+    <MESSAGE value="Fixed errors after cherry-picking hasWon from main" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed errors after cherry-picking hasWon from main" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

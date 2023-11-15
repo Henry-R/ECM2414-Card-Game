@@ -2,13 +2,16 @@ package org.example;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
-public class Player {
+public class Player implements Runnable {
     private final int playerNumber;
     private final Deck inputDeck;
     private final Deck outputDeck;
     private final Queue<Card> hand;
-    private int preferredCount;
     final TextFile textFile;
+    int currentTurn;
+    Boolean won;
+    private int preferredCount;
+
 
     /**
      * Constructs the Player with a given input deck, output deck and initial hand
@@ -21,32 +24,10 @@ public class Player {
         inputDeck = id;
         outputDeck = od;
         hand = new ArrayDeque<>();
-        preferredCount = 0;
         textFile = new TextFile("player" +playerNumber+ "_output.txt");
-    }
-
-    /**
-     * Constructs the Player with a given input deck, output deck and initial hand
-     * @param pd The preferred denomination of cards for the player
-     * @param id The deck for the player to draw cards from
-     * @param od The deck for the player to discard cards to
-     * @param h The initial hand of cards for the player
-     */
-    public Player(int pd, Deck id, Deck od, Queue<Card> h) {
-        playerNumber = pd;
-        inputDeck = id;
-        outputDeck = od;
-        hand = h;
+        currentTurn = 1;
+        won = false;
         preferredCount = 0;
-        textFile = new TextFile("player" +playerNumber+ "_output.txt");
-    }
-
-    /**
-     * Pushes the given card to the end of the hand queue
-     * @param card The card that will be put in the hand
-     */
-    public void pushCard(Card card) {
-        hand.add(card);
     }
 
     /**
@@ -69,16 +50,11 @@ public class Player {
         return preferredCount == 4 || allCardsSame();
     }
 
-    /**
-     * Removes all the preferred cards from the initial hand, so
-     * they will not be discarded
-     */
-    public void removePreferred() {
-        for (var it = hand.iterator(); it.hasNext();) {
-            if (it.next().getDenomination() == playerNumber) {
-                preferredCount++;
-                it.remove();
-            }
+    public void pushCard(Card newCard) {
+        if (newCard.getDenomination() == playerNumber) {
+            preferredCount++;
+        } else {
+            hand.add(newCard);
         }
     }
 
@@ -86,18 +62,20 @@ public class Player {
      * Draws card from input deck
      * @return newly drawn card
      */
-    public Card drawCard() throws InterruptedException {
-        return inputDeck.dealNextCard();
+    private Card drawCard() throws InterruptedException {
+        var newCard = inputDeck.dealNextCard();
+        pushCard(newCard);
+        return newCard;
     }
 
     /**
      * Discards card from hand and adds to output deck
-     * @return newly discarded card's denomination
+     * @return newly discarded card
      */
-    public int discardCard() throws InterruptedException {
-        Card discardedCard = hand.remove();
+    private Card discardCard() throws InterruptedException {
+        Card discardedCard = hand.poll();
         outputDeck.pushCard(discardedCard);
-        return discardedCard.getDenomination();
+        return discardedCard;
     }
 
     /**
@@ -130,39 +108,34 @@ public class Player {
     /** 
      * Does a single play for the player, draws new card,
      * discards a card, checks if player has won.
-     * @return whether the player has now won after this play
     */
-    public boolean play() {
-        if (this.allCardsSame()) {
-            return true;
-        } else {
-            removePreferred();
-        }
-
-        try {
-            Card newCard = drawCard();
-            int newCardDenomination = newCard.getDenomination();
-
-            if (newCardDenomination == playerNumber) {
-                preferredCount++;
-            } else {
-                this.pushCard(newCard);
+    private void play() {
+        while (!won) {
+            try {
+                var newCard = drawCard();
+                var oldCard = discardCard();
+                writeToFile(newCard.getDenomination(),
+                            oldCard.getDenomination());
+            } catch (InterruptedException e) {
+                // Exit thread
+                return;
             }
-
-            int oldCardDenomination = discardCard();
-            this.writeToFile(newCardDenomination, oldCardDenomination);
-            if (preferredCount == 4) {
-                return true;
+            if (hasWon()) {
+                won = true;
+                // Player has won, no need to continue playing
+                // Exit thread
+                return;
             }
-        } catch (InterruptedException e) {
-            // Interrupted, didn't win
-            return false;
+            currentTurn++;
         }
-    
-        return false;
     }
 
     public int getPlayerNumber() {
         return playerNumber;
+    }
+
+    @Override
+    public void run() {
+        play();
     }
 }
