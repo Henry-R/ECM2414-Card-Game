@@ -81,7 +81,7 @@ public class Player {
      * Draws card from input deck
      * @return newly drawn card
      */
-    public Card drawCard() {
+    public Card drawCard() throws InterruptedException {
         Card drawnCard = inputdeck.dealNextCard();
         return drawnCard;
     }
@@ -90,7 +90,7 @@ public class Player {
      * Discards card from hand and adds to output deck
      * @return newly discarded card's denomination
      */
-    public int discardCard() {
+    public int discardCard() throws InterruptedException {
         Card discardedCard = hand.remove();
         outputdeck.pushCard(discardedCard);
         return discardedCard.getDenomination();
@@ -138,19 +138,24 @@ public class Player {
             this.removePreferred();
         }
 
-        Card newCard = this.drawCard();
-        int newCardDenom = newCard.getDenomination();
+        try {
+            Card newCard = this.drawCard();
+            int newCardDenom = newCard.getDenomination();
 
-        if (newCardDenom == playerNumber) {
-            preferredcount ++;
-        } else {
-            this.pushCard(newCard);
-        }
+            if (newCardDenom == playerNumber) {
+                preferredcount++;
+            } else {
+                this.pushCard(newCard);
+            }
 
-        int oldCardDenom = this.discardCard();
-        this.writeToFile(newCardDenom, oldCardDenom);
-        if (preferredcount == 4) {
-            hasWon = true;
+            int oldCardDenom = this.discardCard();
+            this.writeToFile(newCardDenom, oldCardDenom);
+            if (preferredcount == 4) {
+                hasWon = true;
+            }
+        } catch (InterruptedException e) {
+            // Interrupted, didn't win
+            return false;
         }
     
         return hasWon;

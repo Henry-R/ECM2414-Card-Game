@@ -54,7 +54,7 @@ class PlayerTest {
     }
 
     @Test
-    void removePreferred() {
+    void removePreferred() throws InterruptedException {
         var testInputDeck = new Deck(1);
         var testOutputDeck = new Deck(2);
         Queue<Card> testHand = new LinkedList<>();
@@ -70,10 +70,11 @@ class PlayerTest {
     }
 
     @Test
-    void drawCard() {
-        var cardArray = new Card[]{new Card(1), new Card(2), new Card(3)};
-        Collection<Card> CardCollection = Arrays.asList(cardArray);
-        var testInputDeck = new Deck(CardCollection, 1);
+    void drawCard() throws InterruptedException {
+        var testInputDeck = new Deck(1);
+        testInputDeck.pushCard(new Card(1));
+        testInputDeck.pushCard(new Card(2));
+        testInputDeck.pushCard(new Card(3));
         var testOutputDeck = new Deck(2);
         Queue<Card> testHand = new LinkedList<>();
 
@@ -83,7 +84,7 @@ class PlayerTest {
     }
 
     @Test
-    void discardCard() {
+    void discardCard() throws InterruptedException {
         var testInputDeck = new Deck(1);
         var testOutputDeck = new Deck(2);
         Queue<Card> testHand = new LinkedList<>();
@@ -130,10 +131,11 @@ class PlayerTest {
     }
 
     @Test
-    void play() {
-        var cardArray = new Card[]{new Card(1), new Card(2), new Card(3)};
-        Collection<Card> CardCollection = Arrays.asList(cardArray);
-        var testInputDeck = new Deck(CardCollection, 1);
+    void play() throws InterruptedException {
+        var testInputDeck = new Deck(1);
+        testInputDeck.pushCard(new Card(1));
+        testInputDeck.pushCard(new Card(2));
+        testInputDeck.pushCard(new Card(3));
         var testOutputDeck = new Deck(2);
         Queue<Card> testHand1 = new LinkedList<>();
         testHand1.add(new Card(1));
