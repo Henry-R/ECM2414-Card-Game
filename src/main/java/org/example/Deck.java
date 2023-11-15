@@ -1,47 +1,35 @@
 package org.example;
 
-import java.util.Collection;
-import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.Queue;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 public class Deck {
-    private final Queue<Card> cards;
-    private final int decknumber;
+    private final BlockingQueue<Card> cards;
+    private final int deckNumber;
 
     /**
      * Constructs an empty deck of cards
      * @param dn the number of the deck
      */
     public Deck(int dn) {
-        cards = new ConcurrentLinkedQueue<>();
-        decknumber = dn;
-    }
-
-    /**
-     * Constructs a deck containing a given collection of cards
-     * @param initial_cards The cards the deck will be initialized using
-     * @param dn the number of the deck
-     */
-    public Deck(Collection<Card> initial_cards, int dn) {
-        cards = new ConcurrentLinkedQueue<>();
-        cards.addAll(initial_cards);
-        decknumber = dn;
+        cards = new LinkedBlockingQueue<>();
+        deckNumber = dn;
     }
 
     /**
      * Pushes the given card to the bottom of the deck
      * @param card The card that will be put in the deck
      */
-    public void pushCard(Card card) {
-        cards.add(card);
+    public void pushCard(Card card) throws InterruptedException {
+        cards.put(card);
     }
 
     /**
      * Returns and removes the top card in the deck
      * @return Card object or null if Deck is empty
      */
-    public Card dealNextCard() {
-        return cards.poll();
+    public Card dealNextCard() throws InterruptedException {
+        return cards.take();
     }
 
     /**
@@ -49,6 +37,6 @@ public class Deck {
      * @return deck number
      */
     public int getDeckNumber() {
-        return decknumber;
+        return deckNumber;
     }
 }
