@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Created PlayerHandler to handle creating of threads. Created PlayerJudge to act as protected shared memory so Player objects can communicate wins">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/PlayerHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/PlayerJudge.java" afterDir="false" />
+    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Edited pack two so player 2 wins instead">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CardGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CardGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/PlayerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -385,7 +381,28 @@
       <option name="project" value="LOCAL" />
       <updated>1700080322935</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Created PlayerHandler to handle creating of threads. Created PlayerJudge to act as protected shared memory so Player objects can communicate wins">
+      <created>1700086658794</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1700086658794</updated>
+    </task>
+    <task id="LOCAL-00032" summary="added more test decks">
+      <created>1700086822731</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1700086822731</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Edited pack two so player 2 wins instead">
+      <created>1700087013330</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1700087013330</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -412,8 +429,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Removed JUnit test 4 as a dependency and added JUnit test 5 with tests for Deck and Card" />
-    <MESSAGE value="Refactored method names to fit with naming convention" />
     <MESSAGE value="Added Deck constructor that creates deck with initial collection of cards" />
     <MESSAGE value="Test when Deck given empty card collection" />
     <MESSAGE value="Deckreader class and tests" />
@@ -437,7 +452,9 @@
     <MESSAGE value="Fixed errors after cherry-picking hasWon from main" />
     <MESSAGE value="rewrote Player.play() to simplify logic" />
     <MESSAGE value="Created PlayerHandler to handle creating of threads. Created PlayerJudge to act as protected shared memory so Player objects can communicate wins" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created PlayerHandler to handle creating of threads. Created PlayerJudge to act as protected shared memory so Player objects can communicate wins" />
+    <MESSAGE value="added more test decks" />
+    <MESSAGE value="Edited pack two so player 2 wins instead" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edited pack two so player 2 wins instead" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -446,11 +463,6 @@
           <properties class="java.util.ConcurrentModificationException" package="java.util" />
           <option name="timeStamp" value="4" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Player.java</url>
-          <line>115</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>

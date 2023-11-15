@@ -10,8 +10,6 @@ public class Player implements Runnable {
     private final PlayerJudge judge;
     private final Queue<Card> hand;
     private final StringBuilder fileOutput;
-    int currentTurn;
-    Boolean won;
     private int preferredCount;
 
 
@@ -28,8 +26,6 @@ public class Player implements Runnable {
         judge = j;
         hand = new ArrayDeque<>();
         fileOutput = new StringBuilder();
-        currentTurn = 1;
-        won = false;
         preferredCount = 0;
     }
 
@@ -111,8 +107,10 @@ public class Player implements Runnable {
      * discards a card, checks if player has won.
     */
     private void play() {
-        while (!won) {
-            if (judge.playerHasWon() && judge.getWinningTurn() <= currentTurn) {
+        int currentTurn = 1;
+        // Until thread exits (either because of an interrupt or because player has won)
+        while (true) {
+            if (judge.playerHasWon() && judge.getWinningTurn() < currentTurn) {
                 // Taken more turns than the winner, so we'll never do better
                 // Exit thread
                 return;
@@ -131,7 +129,6 @@ public class Player implements Runnable {
                 return;
             }
             if (hasWon()) {
-                won = true;
                 // Notify other players this player has won
                 judge.newWinner(playerNumber, currentTurn);
                 // Exit thread
