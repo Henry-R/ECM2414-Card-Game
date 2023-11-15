@@ -66,6 +66,11 @@ public class PlayerHandler {
         for (var thread : playerThreads) {
             thread.join();
         }
+
+        for (var player : players) {
+            player.printPlayHistory();
+        }
+
         return judge.getWinningPlayer();
     }
 }
