@@ -136,26 +136,35 @@ public class Player implements Runnable {
     }
 
     /**
-     *
+     * Plays a single round by drawing and discarding a card
+     * @throws InterruptedException if interrupted while waiting either to draw or discard a card
      */
-    private void play() {
+    private void playRound()
+    throws InterruptedException {
+        var newCard = drawCard();
+        var oldCard = discardCard();
+
+        var printablePlay = getPlayString(
+                newCard.getDenomination(),
+                oldCard.getDenomination());
+        fileOutput.append(printablePlay);
+    }
+
+    /**
+     * The main game loop. Loops until either this player wins, or the judge declares another player has already won
+     */
+    @Override
+    public void run() {
         int currentTurn = 1;
         // Until thread exits (either because of an interrupt or because player has won)
         while (true) {
             if (judge.playerHasWon() && judge.getWinningTurn() < currentTurn) {
-                // Taken more turns than the winner, so we'll never do better
+                // Taken more turns than the winner, so this player will never do better
                 // Exit thread
                 return;
             }
-
             try {
-                var newCard = drawCard();
-                var oldCard = discardCard();
-
-                var printablePlay = getPlayString(
-                        newCard.getDenomination(),
-                        oldCard.getDenomination());
-                fileOutput.append(printablePlay);
+                playRound();
             } catch (InterruptedException e) {
                 // Exit thread
                 return;
@@ -168,10 +177,5 @@ public class Player implements Runnable {
             }
             currentTurn++;
         }
-    }
-
-    @Override
-    public void run() {
-        play();
     }
 }
