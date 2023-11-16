@@ -8,11 +8,23 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Provides methods for setting up the game and playing it. Game is played synchronously with every player having a
+ * different thread
+ */
 public class PlayerHandler {
 
     private final PlayerJudge judge;
     private final List<Player> players;
 
+    /**
+     * Initializes the game by created and dealing cards to players and decks
+     * @param player_count The number of players in the game
+     * @param packURL The location of the pack of cards on this PC
+     * @throws InsufficientCardException The pack does not have enough cards to deal to every player and deck
+     * @throws FileNotFoundException The pack cannot be found on the PC
+     * @throws InterruptedException Interrupted while setting up the game
+     */
     public PlayerHandler(int player_count, String packURL)
             throws InsufficientCardException, FileNotFoundException, InterruptedException{
         int PLAYER_HAND_SIZE = 4;
@@ -54,25 +66,30 @@ public class PlayerHandler {
     }
 
     /**
-     *
-     * @return the playerID of the winning player
+     * Plays the game from start to finish and determines a winning player
+     * @return Player number of the player who won
+     * @throws InterruptedException Interrupted during the game
      */
     public int playGame()
     throws InterruptedException {
         var playerThreads = new ArrayList<Thread>();
+        // Create and start all the players as parallel threads
         for (var player : players) {
             var thread = new Thread(player);
             playerThreads.add(thread);
             thread.start();
         }
+        // Wait for all the players to finish the game
         for (var thread : playerThreads) {
             thread.join();
         }
 
+        // Output all the player play history to file
         for (var player : players) {
             player.printPlayHistory();
         }
 
+        // Judge keeps track of the winner during the game
         return judge.getWinningPlayer();
     }
 }
