@@ -17,7 +17,7 @@ public class Player implements Runnable {
     private final Deck outputDeck;
     // Used as a shared memory to communicate between players if they should stop
     private final PlayerJudge judge;
-    // All the cards this player will not keep indefinitely
+    // All the cards currently in this player's hand
     private final PriorityQueue<Card> hand;
     // The player's output which describes all their moves
     private final StringBuilder fileOutput;
@@ -37,11 +37,13 @@ public class Player implements Runnable {
         this.judge = judge;
 
         // This comparator always puts a preferred card last
-        final Comparator<Card> preferredCardComparator = (v1, v2) -> {
-            if (v1.getDenomination() == playerNumber) return 1;
-            if (v2.getDenomination() == playerNumber) return -1;
+        final Comparator<Card> preferredCardComparator = (c1, c2) -> {
+            // c1 is preferred, so put it after c2
+            if (c1.getDenomination() == playerNumber) return 1;
+            // c2 is preferred, so put it after c1
+            if (c2.getDenomination() == playerNumber) return -1;
             // If neither card is preferred, use regular integer comparison
-            else return v1.getDenomination() - v2.getDenomination();
+            else return c1.getDenomination() - c2.getDenomination();
         };
         hand = new PriorityQueue<>(4, preferredCardComparator);
 
@@ -49,26 +51,15 @@ public class Player implements Runnable {
     }
 
     /**
-     * Checks if the hand only contains cards with the same denomination
-     * @return True if hand's cards have same denomination, false otherwise
+     * A player has won either if their hand consists entirely of cards with the same denomination
+     * @return True if the player has met the conditions for winning, false otherwise
      */
-    private boolean allCardsSame() {
+    private boolean hasWon() {
         // Get all the card denominations
         var denominations = hand.stream().map(Card::getDenomination);
         // Check if set has size 1, implies all cards have same denomination
         var denominationSet = denominations.collect(Collectors.toSet());
-        // Preferred cards will never be in the hand, as the hand is reserved for cards that might be
-        // discarded, so if preferredCount > 0, the deck contains cards with different denominations
         return denominationSet.size() == 1;
-    }
-
-    /**
-     * A player has won either if their hand consists entirely of cards with the same denomination,
-     * or if they have four cards which are preferred
-     * @return True if the player has met the conditions for winning, false otherwise
-     */
-    private boolean hasWon() {
-        return allCardsSame();
     }
 
     /**
