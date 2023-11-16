@@ -5,6 +5,8 @@ import player.card.Deck;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Player implements Runnable {
     private final int playerNumber;
@@ -37,15 +39,11 @@ public class Player implements Runnable {
      * @return boolean of whether the player has won immediately or not
      */
     private boolean allCardsSame() {
-        // Check all four cards are the same
-        assert hand.peek() != null;
-        int n = hand.peek().getDenomination();
-        for (Card c : hand) {
-            if (c.getDenomination() != n) {
-                return false;
-            }
-        }
-        return true;
+        // Get all the card denominations
+        var denominations = hand.stream().map((Card c) -> c.getDenomination());
+        // Check if set has size 1, implies all cards have same denomination
+        var denominationSet = denominations.collect(Collectors.toSet());
+        return denominationSet.size() == 1;
     }
 
     private boolean hasWon() {
@@ -85,7 +83,7 @@ public class Player implements Runnable {
      * including the preferred values that are not in the hand queue
      * @return string of a representation of the denomination of the cards in the players hand
      */
-    private String createPrintableHand() {
+    public String getHandString() {
         StringBuilder printableHand = new StringBuilder();
         printableHand.append((playerNumber + " ").repeat(preferredCount));
         for(Card c : hand) { 
@@ -99,10 +97,10 @@ public class Player implements Runnable {
      * @param nCard newly drawn card denomination
      * @param oCard newly discarded card denomination
      */
-    private String createPrintablePlay(int nCard, int oCard) {
+    private String getPlayString(int nCard, int oCard) {
         return "player " + playerNumber + " draws a " + nCard + " from deck " + inputDeck.getDeckNumber() +
                 "\nplayer " + playerNumber + " discards a " + oCard + " to deck " + outputDeck.getDeckNumber() +
-                "\nplayer " + playerNumber + " current hand is " + createPrintableHand() + "\n";
+                "\nplayer " + playerNumber + " current hand is " + getHandString() + "\n";
     }
 
     /** 
@@ -123,7 +121,7 @@ public class Player implements Runnable {
                 var newCard = drawCard();
                 var oldCard = discardCard();
 
-                var printablePlay = createPrintablePlay(
+                var printablePlay = getPlayString(
                         newCard.getDenomination(),
                         oldCard.getDenomination());
                 fileOutput.append(printablePlay);
