@@ -6,12 +6,20 @@ import java.util.Scanner;
 
 public class CardGame
 {
+    /**
+     * Reads the first integer from the system console
+     * @return the integer read from the console
+     */
     private static int getValidPlayerCount() {
         Scanner in = new Scanner(System.in);
         System.out.println("Please enter the number of players:");
         return in.nextInt();
     }
 
+    /**
+     * Reads line from the system console
+     * @return the string read from the console
+     */
     private static String getValidPackLocation() {
         Scanner in = new Scanner(System.in);
         System.out.println("Please enter the number of players:");
