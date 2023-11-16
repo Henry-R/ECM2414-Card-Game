@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Added comments and docstrings to all of PlayerHandler's methods">
+    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Added comments and docstrings to all of PlayerJudge's methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/player/PlayerJudge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/player/PlayerJudge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/player/card/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/player/card/Deck.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,13 +176,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699355020949</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Added Card and Player class shells with some basic code that tests they construct">
-      <created>1699355729799</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1699355729799</updated>
     </task>
     <task id="LOCAL-00003" summary="Added basic deck class">
       <created>1699445594893</created>
@@ -520,7 +513,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700159005256</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Added comments and docstrings to all of PlayerJudge's methods">
+      <created>1700159354338</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1700159354338</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -557,7 +557,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="getPlayersFromPack now throws exceptions instead of silently failing" />
     <MESSAGE value="Added getPlayerNumber" />
     <MESSAGE value="Basic game functionality" />
     <MESSAGE value="The card packs used for testing" />
@@ -582,7 +581,8 @@
     <MESSAGE value="added some docstrings and comments to CardGame and Player classes" />
     <MESSAGE value="Added comments and docstrings to all of Player's methods" />
     <MESSAGE value="Added comments and docstrings to all of PlayerHandler's methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added comments and docstrings to all of PlayerHandler's methods" />
+    <MESSAGE value="Added comments and docstrings to all of PlayerJudge's methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added comments and docstrings to all of PlayerJudge's methods" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
