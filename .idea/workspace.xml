@@ -5,15 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="PlayerHandler unit tests + modified test packs 1-4 to be fully featured">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/four.txt" beforeDir="false" afterPath="$PROJECT_DIR$/packs/four.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/one.txt" beforeDir="false" afterPath="$PROJECT_DIR$/packs/one.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/three.txt" beforeDir="false" afterPath="$PROJECT_DIR$/packs/three.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/two.txt" beforeDir="false" afterPath="$PROJECT_DIR$/packs/two.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/player/PlayerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/player/PlayerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/player/card/CardReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/player/card/CardReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/player/PlayerHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/player/PlayerHandlerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/player/PlayerJudgeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/player/PlayerJudgeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/player/card/CardReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/player/card/CardReaderTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -487,7 +478,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700148642769</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="PlayerHandler unit tests + modified test packs 1-4 to be fully featured">
+      <created>1700151622616</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1700151622616</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

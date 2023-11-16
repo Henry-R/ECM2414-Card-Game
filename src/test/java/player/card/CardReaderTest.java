@@ -15,21 +15,16 @@ class CardReaderTest {
 
     @Test
     void nextCards() {
-        final var test1URL = "packs/test_deck.txt";
-        assertNotNull(test1URL);
         assertDoesNotThrow(() -> {
-            var reader1 = new CardReader(test1URL);
+            var reader1 = new CardReader("packs/test_deck.txt");
             assertEquals(3, reader1.getCardCount());
             assertEquals(1, reader1.nextCard().getDenomination());
             assertEquals(2, reader1.nextCard().getDenomination());
             assertEquals(3, reader1.nextCard().getDenomination());
         });
 
-
-        final var test2URL = "packs/test_bad_deck.txt";
-        assertNotNull(test2URL);
         assertDoesNotThrow(() -> {
-            var reader2 = new CardReader(test2URL);
+            var reader2 = new CardReader("packs/test_bad_deck.txt");
             assertEquals(3, reader2.getCardCount());
             assertEquals(1, reader2.nextCard().getDenomination());
             assertEquals(2, reader2.nextCard().getDenomination());
