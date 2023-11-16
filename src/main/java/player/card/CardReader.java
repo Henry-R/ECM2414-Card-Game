@@ -56,10 +56,6 @@ public class CardReader {
         return readSuccessful;
     }
 
-    public Collection<Card> getCards() {
-        return cards;
-    }
-
     public int getCardCount() { return cards.size(); }
 
     public Card nextCard() {

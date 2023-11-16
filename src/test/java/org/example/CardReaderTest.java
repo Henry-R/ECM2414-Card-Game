@@ -19,7 +19,7 @@ class CardReaderTest {
     }
 
     @Test
-    void getCards() {
+    void nextCards() {
         final var test1URL = "packs/test_deck.txt";
         assertNotNull(test1URL);
         var reader1 = new CardReader(test1URL);

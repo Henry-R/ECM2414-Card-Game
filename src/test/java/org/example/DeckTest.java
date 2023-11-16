@@ -1,8 +1,11 @@
 package org.example;
 
+import org.junit.jupiter.api.Timeout;
 import player.card.Card;
 import player.card.Deck;
 import org.junit.jupiter.api.Test;
+
+import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -21,24 +24,22 @@ class DeckTest {
     }
 
     @Test
-    void pushCard()  throws InterruptedException {
-        var TestDeck = new Deck(1);
-        TestDeck.pushCard(new Card(1));
-        assertEquals(1, TestDeck.dealNextCard().getDenomination());
-        TestDeck.pushCard(new Card(2));
-        TestDeck.pushCard(new Card(3));
-        assertEquals(2, TestDeck.dealNextCard().getDenomination());
-    }
-
-    @Test
-    void dealNextCard()  throws InterruptedException {
-        var TestDeck = new Deck(1);
-        TestDeck.pushCard(new Card(1));
-        TestDeck.pushCard(new Card(2));
-        TestDeck.pushCard(new Card(3));
-        assertEquals(1, TestDeck.dealNextCard().getDenomination());
-        assertEquals(2, TestDeck.dealNextCard().getDenomination());
-        assertEquals(3, TestDeck.dealNextCard().getDenomination());
+    @Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
+    void pushDealCards() {
+        final Deck testDeck = new Deck(0);
+        // Test that the deck works when reading and writing to it from multiple threads
+        var t = new Thread(() -> assertDoesNotThrow(() -> {
+            testDeck.pushCard(new Card(1));
+            testDeck.pushCard(new Card(2));
+            testDeck.pushCard(new Card(3));
+        }));
+        t.start();
+        assertDoesNotThrow(() -> {
+            assertEquals(1, testDeck.dealNextCard().getDenomination());
+            assertEquals(2, testDeck.dealNextCard().getDenomination());
+            assertEquals(3, testDeck.dealNextCard().getDenomination());
+            t.join();
+        });
     }
 
     @Test

@@ -4,6 +4,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class Deck {
+    // No need to use synchronised methods as BlockingQueue is already thread-safe
     private final BlockingQueue<Card> cards;
     private final int deckNumber;
 
