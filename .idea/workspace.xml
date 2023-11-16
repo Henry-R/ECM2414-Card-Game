@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Added comments and docstrings to all of CardReader's methods">
+    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Added comments and docstrings to all of Card's methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/player/card/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/player/card/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/player/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/player/PlayerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +119,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerHandlerTest.playGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CardGame" />
       <extension name="coverage">
         <pattern>
@@ -127,14 +128,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="player" />
-      <option name="MAIN_CLASS_NAME" value="player.PlayerHandlerTest" />
-      <option name="METHOD_NAME" value="playGame" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="player.PlayerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerHandlerTest.playerHandler" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerTest.testRun" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CardGame" />
       <extension name="coverage">
         <pattern>
@@ -143,8 +144,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="player" />
-      <option name="MAIN_CLASS_NAME" value="player.PlayerHandlerTest" />
-      <option name="METHOD_NAME" value="playerHandler" />
+      <option name="MAIN_CLASS_NAME" value="player.PlayerTest" />
+      <option name="METHOD_NAME" value="testRun" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -161,10 +162,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.java in CardGame" />
-        <item itemvalue="Application.CardGame" />
-        <item itemvalue="JUnit.PlayerHandlerTest.playerHandler" />
-        <item itemvalue="JUnit.PlayerHandlerTest.playGame" />
+        <item itemvalue="JUnit.PlayerTest.testRun" />
         <item itemvalue="JUnit.PlayerHandlerTest" />
+        <item itemvalue="JUnit.PlayerTest" />
+        <item itemvalue="Application.CardGame" />
       </list>
     </recent_temporary>
   </component>
@@ -176,13 +177,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699355020949</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Replaced Deck class queue with thread safe alternative">
-      <created>1699472386374</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1699472386374</updated>
     </task>
     <task id="LOCAL-00006" summary="Added docstrings to Card and Deck classes">
       <created>1699473704158</created>
@@ -520,7 +514,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700159941328</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Added comments and docstrings to all of Card's methods">
+      <created>1700160052817</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1700160052817</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -557,7 +558,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="The card packs used for testing" />
     <MESSAGE value="moved test decks from resources to target dir" />
     <MESSAGE value="created Player.hasWon" />
     <MESSAGE value="Fixed errors after cherry-picking hasWon from main" />
@@ -582,7 +582,8 @@
     <MESSAGE value="Added comments and docstrings to all of PlayerJudge's methods" />
     <MESSAGE value="Added comments and docstrings to all of Deck's methods" />
     <MESSAGE value="Added comments and docstrings to all of CardReader's methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added comments and docstrings to all of CardReader's methods" />
+    <MESSAGE value="Added comments and docstrings to all of Card's methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added comments and docstrings to all of Card's methods" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -116,15 +116,15 @@ class PlayerTest {
             assertEquals(4, outDeck.dealNextCard().getDenomination());
             assertEquals(5, outDeck.dealNextCard().getDenomination());
             assertEquals(6, outDeck.dealNextCard().getDenomination());
+
+            playerThread.join();
+
             // No more cards in discard pile
             assertTrue(outDeck.isEmpty());
-
             // Check in-deck has one card remaining
             assertFalse(inDeck.isEmpty());
             inDeck.dealNextCard();
             assertTrue(inDeck.isEmpty());
-
-            playerThread.join();
         });
         // Player wins in six moves exactly
         assertEquals(0, judge.getWinningPlayer());

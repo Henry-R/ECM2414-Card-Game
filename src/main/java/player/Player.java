@@ -3,8 +3,8 @@ package player;
 import player.card.Card;
 import player.card.Deck;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.Comparator;
+import java.util.PriorityQueue;
 import java.util.stream.Collectors;
 
 public class Player implements Runnable {
@@ -18,11 +18,7 @@ public class Player implements Runnable {
     // Used as a shared memory to communicate between players if they should stop
     private final PlayerJudge judge;
     // All the cards this player will not keep indefinitely
-    private final Queue<Card> hand;
-    // The total number of preferred cards in the player's hand
-    // (cards the player will keep indefinitely according to the given strategy)
-    // TODO maybe use priority queue for hand to make code simpler?
-    private int preferredCount;
+    private final PriorityQueue<Card> hand;
     // The player's output which describes all their moves
     private final StringBuilder fileOutput;
 
@@ -40,9 +36,16 @@ public class Player implements Runnable {
         this.outputDeck = outputDeck;
         this.judge = judge;
 
-        hand = new LinkedList<>();
+        // This comparator always puts a preferred card last
+        final Comparator<Card> preferredCardComparator = (v1, v2) -> {
+            if (v1.getDenomination() == playerNumber) return 1;
+            if (v2.getDenomination() == playerNumber) return -1;
+            // If neither card is preferred, use regular integer comparison
+            else return v1.getDenomination() - v2.getDenomination();
+        };
+        hand = new PriorityQueue<>(4, preferredCardComparator);
+
         fileOutput = new StringBuilder();
-        preferredCount = 0;
     }
 
     /**
@@ -56,7 +59,7 @@ public class Player implements Runnable {
         var denominationSet = denominations.collect(Collectors.toSet());
         // Preferred cards will never be in the hand, as the hand is reserved for cards that might be
         // discarded, so if preferredCount > 0, the deck contains cards with different denominations
-        return denominationSet.size() == 1 && preferredCount == 0;
+        return denominationSet.size() == 1;
     }
 
     /**
@@ -65,7 +68,7 @@ public class Player implements Runnable {
      * @return True if the player has met the conditions for winning, false otherwise
      */
     private boolean hasWon() {
-        return preferredCount == 4 || allCardsSame();
+        return allCardsSame();
     }
 
     /**
@@ -73,12 +76,7 @@ public class Player implements Runnable {
      * @param newCard the card that will be pushed into this player's hand
      */
     public void pushCard(Card newCard) {
-        // If the card is preferred, do not push it into the hand as it might get discarded
-        if (newCard.getDenomination() == playerNumber) {
-            preferredCount++;
-        } else {
-            hand.add(newCard);
-        }
+         hand.add(newCard);
     }
 
     /**
@@ -108,7 +106,6 @@ public class Player implements Runnable {
      */
     public String getHandString() {
         StringBuilder printableHand = new StringBuilder();
-        printableHand.append((playerNumber + " ").repeat(preferredCount));
         for(Card c : hand) { 
             printableHand.append(c.getDenomination()).append(" ");
         }
