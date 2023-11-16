@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Added comments and docstrings to all of Deck's methods">
+    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Added comments and docstrings to all of CardReader's methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/player/card/CardReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/player/card/CardReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/player/card/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/player/card/Card.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,13 +176,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699355020949</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Added base functionality to Deck and Card classes">
-      <created>1699446151200</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1699446151200</updated>
     </task>
     <task id="LOCAL-00005" summary="Replaced Deck class queue with thread safe alternative">
       <created>1699472386374</created>
@@ -520,7 +513,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700159584345</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Added comments and docstrings to all of CardReader's methods">
+      <created>1700159941328</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1700159941328</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -557,7 +557,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Basic game functionality" />
     <MESSAGE value="The card packs used for testing" />
     <MESSAGE value="moved test decks from resources to target dir" />
     <MESSAGE value="created Player.hasWon" />
@@ -582,7 +581,8 @@
     <MESSAGE value="Added comments and docstrings to all of PlayerHandler's methods" />
     <MESSAGE value="Added comments and docstrings to all of PlayerJudge's methods" />
     <MESSAGE value="Added comments and docstrings to all of Deck's methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added comments and docstrings to all of Deck's methods" />
+    <MESSAGE value="Added comments and docstrings to all of CardReader's methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added comments and docstrings to all of CardReader's methods" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
