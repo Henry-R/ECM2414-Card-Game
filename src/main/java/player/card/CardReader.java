@@ -12,8 +12,8 @@ public class CardReader {
 
     /**
      * Reads an ordered list of cards from a file in a safe way
-     * Success parameter true if file loads correctly and false otherwise
-     * @param filename The file containing an ordered list of cards
+     * @param filename The file containing an ordered list of cards, with each card on a new line
+     * @throws FileNotFoundException The specified file cannot be found on this PC
      */
     public CardReader(String filename)
     throws FileNotFoundException {
@@ -35,6 +35,7 @@ public class CardReader {
             var cardStr = reader.nextLine();
             try {
                 var denominator = Integer.parseInt(cardStr);
+                // Cards must be positive integer
                 if (denominator > 0) {
                     cards.add(new Card(denominator));
                 }
@@ -45,8 +46,15 @@ public class CardReader {
         return cards;
     }
 
+    /**
+     * @return Total number of cards read from file
+     */
     public int getCardCount() { return cards.size(); }
 
+    /**
+     * Returns and removes the next card in the list of cards read from the file
+     * @return The next card from the file
+     */
     public Card nextCard() {
         return cards.pop();
     }
