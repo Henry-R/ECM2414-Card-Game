@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="implemented Player.printPlayHistory test">
+    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="implemented asynchronous Player.run test">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/PlayerJudgeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/player/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/player/card/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/player/card/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/PlayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/player/PlayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/TextFileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/player/TextFileTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/player/PlayerHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/player/PlayerHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/player/PlayerJudgeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/player/PlayerJudgeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -79,10 +81,12 @@
       <recent name="C:\Users\henry\IdeaProjects\CardGame\src\test\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="player" />
       <recent name="" />
       <recent name="org.example" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="player" />
       <recent name="org.example" />
     </key>
   </component>
@@ -91,12 +95,12 @@
       <module name="CardGame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="player.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.PlayerTest" />
+      <option name="PACKAGE_NAME" value="player" />
+      <option name="MAIN_CLASS_NAME" value="player.PlayerTest" />
       <option name="METHOD_NAME" value="printPlayHistory" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -107,12 +111,12 @@
       <module name="CardGame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="player.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.PlayerTest" />
+      <option name="PACKAGE_NAME" value="player" />
+      <option name="MAIN_CLASS_NAME" value="player.PlayerTest" />
       <option name="METHOD_NAME" value="pushCard" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -123,12 +127,12 @@
       <module name="CardGame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="player.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.PlayerTest" />
+      <option name="PACKAGE_NAME" value="player" />
+      <option name="MAIN_CLASS_NAME" value="player.PlayerTest" />
       <option name="METHOD_NAME" value="run" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -139,12 +143,12 @@
       <module name="CardGame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="player.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.PlayerTest" />
+      <option name="PACKAGE_NAME" value="player" />
+      <option name="MAIN_CLASS_NAME" value="player.PlayerTest" />
       <option name="METHOD_NAME" value="runAsync" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -465,7 +469,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700144660660</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="implemented asynchronous Player.run test">
+      <created>1700148229683</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1700148229683</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -502,7 +513,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="remove unnecessary space" />
     <MESSAGE value="deck file from project spec" />
     <MESSAGE value="slightly cleaned up CardReader constructor" />
     <MESSAGE value="slightly cleaned up CardReader.getCardsFromFile" />
@@ -527,7 +537,8 @@
     <MESSAGE value="restructured project file hierarchy" />
     <MESSAGE value="Multithreaded test for deck reader" />
     <MESSAGE value="implemented Player.printPlayHistory test" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented Player.printPlayHistory test" />
+    <MESSAGE value="implemented asynchronous Player.run test" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented asynchronous Player.run test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,9 +1,7 @@
-package org.example;
+package player;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
-import player.Player;
-import player.PlayerJudge;
 import player.card.Card;
 import player.card.Deck;
 

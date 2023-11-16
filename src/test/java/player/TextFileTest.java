@@ -1,6 +1,5 @@
-package org.example;
+package player;
 
-import player.TextFile;
 import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.io.BufferedReader; 
@@ -17,7 +16,7 @@ public class TextFileTest {
         //Test that once the the object has been initialised, you can
         //write to the file, meaning the file exists.
         var testTextFile = new TextFile(testFilename);
-        assertEquals(true, testTextFile.write("s"));
+        assertTrue(testTextFile.write("s"));
     }
 
     @Test

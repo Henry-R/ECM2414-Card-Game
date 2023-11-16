@@ -1,8 +1,6 @@
-package org.example;
+package player.card;
 
 import org.junit.jupiter.api.Timeout;
-import player.card.Card;
-import player.card.Deck;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.TimeUnit;
