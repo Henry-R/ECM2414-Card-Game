@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CardTest {
     @Test
-    void getDenomination() {
+    void testGetDenomination() {
         var TestCard = new Card(5);
         assertEquals(5, TestCard.getDenomination());
         assertNotEquals(4, TestCard.getDenomination());

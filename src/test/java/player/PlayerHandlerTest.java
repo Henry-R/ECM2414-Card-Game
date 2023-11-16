@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerHandlerTest {
     @Test
-    void playerHandler() {
+    void testPlayerHandler() {
         // Success
         assertDoesNotThrow(() -> {
             new PlayerHandler(1, "packs/one.txt");
@@ -26,7 +26,7 @@ class PlayerHandlerTest {
     }
 
     @Test
-    void playGame() {
+    void testPlayGame() {
         assertDoesNotThrow(() -> {
             var handler1 = new PlayerHandler(1, "packs/one.txt");
             var handler2 = new PlayerHandler(2, "packs/two.txt");

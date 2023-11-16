@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="PlayerHandler unit tests + modified test packs 1-4 to be fully featured">
+    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="simplified CardReaderTest.nextCards">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/player/PlayerHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/player/PlayerHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/player/PlayerJudgeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/player/PlayerJudgeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/player/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/player/PlayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/player/TextFileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/player/TextFileTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/player/card/CardReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/player/card/CardReaderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/player/card/CardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/player/card/CardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/player/card/DeckTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/player/card/DeckTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -485,7 +492,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700151622616</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="simplified CardReaderTest.nextCards">
+      <created>1700151715535</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1700151715535</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -522,7 +536,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="slightly cleaned up CardReader.getCardsFromFile" />
     <MESSAGE value="fixed DeckTest to include new deck number" />
     <MESSAGE value="Fixed Player constructor not initializing hand" />
     <MESSAGE value="Fixed ConcurrentModificationException being thrown in Player" />
@@ -547,7 +560,8 @@
     <MESSAGE value="implemented asynchronous Player.run test" />
     <MESSAGE value="restructured tests and added skeleton PlayerHandlerTest and PlayerJudgeTest" />
     <MESSAGE value="PlayerHandler unit tests + modified test packs 1-4 to be fully featured" />
-    <option name="LAST_COMMIT_MESSAGE" value="PlayerHandler unit tests + modified test packs 1-4 to be fully featured" />
+    <MESSAGE value="simplified CardReaderTest.nextCards" />
+    <option name="LAST_COMMIT_MESSAGE" value="simplified CardReaderTest.nextCards" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

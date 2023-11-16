@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TextFileTest {
     
     @Test
-    void TextFileConstructor() {
+    void testTextFileConstructor() {
         String testFilename = "testFile.txt";
 
         //Test that once the the object has been initialised, you can
@@ -20,7 +20,7 @@ public class TextFileTest {
     }
 
     @Test
-    void write() {
+    void testWrite() {
         String testString = "testString";
         String testFilename = "testFile.txt";
         var testTextFile = new TextFile(testFilename);

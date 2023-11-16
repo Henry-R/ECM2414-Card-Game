@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class DeckTest {
 
     @Test
-    void deckConstructor() throws InterruptedException {
+    void testDeckConstructor() throws InterruptedException {
         // Test cards are all in deck in the correct order
         var TestDeck2 = new Deck(2);
         TestDeck2.pushCard(new Card(1));
@@ -23,7 +23,7 @@ class DeckTest {
 
     @Test
     @Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
-    void pushDealCards() {
+    void testPushDealCards() {
         final Deck testDeck = new Deck(0);
         // Test that the deck works when reading and writing to it from multiple threads
         var t = new Thread(() -> assertDoesNotThrow(() -> {
@@ -41,7 +41,7 @@ class DeckTest {
     }
 
     @Test
-    void getDeckNumber() {
+    void testGetDeckNumber() {
         var TestDeck = new Deck(1);
         assertEquals(1, TestDeck.getDeckNumber());
     }

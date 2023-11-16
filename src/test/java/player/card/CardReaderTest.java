@@ -8,13 +8,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CardReaderTest {
     @Test
-    void success() {
+    void testCardReader() {
         assertDoesNotThrow(() -> new CardReader("packs/test_deck.txt"));
         assertThrows(FileNotFoundException.class, () -> new CardReader(""));
     }
 
     @Test
-    void nextCards() {
+    void testNextCards() {
         assertDoesNotThrow(() -> {
             var reader1 = new CardReader("packs/test_deck.txt");
             assertEquals(3, reader1.getCardCount());

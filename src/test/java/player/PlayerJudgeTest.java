@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class PlayerJudgeTest {
 
     @Test
-    void newWinner() {
+    void testNewWinner() {
         var judge = new PlayerJudge();
         judge.newWinner(0, 10);
         assertEquals(0, judge.getWinningPlayer());
@@ -19,7 +19,7 @@ class PlayerJudgeTest {
     }
 
     @Test
-    void playerHasWon() {
+    void testPlayerHasWon() {
         var judge = new PlayerJudge();
         judge.newWinner(0, 10);
         assertTrue(judge.playerHasWon());
@@ -27,7 +27,7 @@ class PlayerJudgeTest {
 
     @Test
     @Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
-    void judgeAsync() {
+    void testJudge() {
         var judge = new PlayerJudge();
         var threads = new ArrayList<Thread>();
 

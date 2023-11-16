@@ -15,13 +15,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class PlayerTest {
 
     @Test
-    void playerConstructor() {
+    void testPlayerConstructor() {
         // No public methods to test constructor was successful.
         // Test constructor through the other methods succeeding
     }
 
     @Test
-    void pushCard() {
+    void testPushCard() {
         var testPlayer1 = new Player(0, null, null, null);
         var testPlayer2 = new Player(0, null, null, null);
 
@@ -48,7 +48,7 @@ class PlayerTest {
     }
 
     @Test
-    void printPlayHistory() {
+    void testPrintPlayHistory() {
         var inDeck = new Deck(1);
         var outDeck = new Deck(2);
         var judge = new PlayerJudge();
@@ -82,7 +82,7 @@ class PlayerTest {
 
     @Test
     @Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
-    void run() {
+    void testRun() {
         // Test the game playing strategy
         var inDeck = new Deck(1);
         var outDeck = new Deck(2);
