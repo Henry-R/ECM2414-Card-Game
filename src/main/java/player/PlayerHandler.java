@@ -37,7 +37,7 @@ public class PlayerHandler {
         var initialCards = new CardReader(packURL);
         if (initialCards.getCardCount() < player_count * TOTAL_SIZE) {
             throw new InsufficientCardException("Not enough cards in " + packURL +
-                    "! Expected " + TOTAL_SIZE + " but got " + initialCards.getCardCount());
+                    "! Expected " + player_count * TOTAL_SIZE + " but got " + initialCards.getCardCount());
         }
         else {
             // First deal to players

@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="implemented asynchronous Player.run test">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/PlayerJudgeTest.java" afterDir="false" />
+    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="PlayerHandler unit tests + modified test packs 1-4 to be fully featured">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/player/PlayerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/TextFileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/player/TextFileTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packs/four.txt" beforeDir="false" afterPath="$PROJECT_DIR$/packs/four.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packs/one.txt" beforeDir="false" afterPath="$PROJECT_DIR$/packs/one.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packs/three.txt" beforeDir="false" afterPath="$PROJECT_DIR$/packs/three.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packs/two.txt" beforeDir="false" afterPath="$PROJECT_DIR$/packs/two.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/player/PlayerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/player/PlayerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/player/card/CardReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/player/card/CardReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/player/PlayerHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/player/PlayerHandlerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/player/PlayerJudgeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/player/PlayerJudgeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/player/card/CardReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/player/card/CardReaderTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +85,7 @@
       <recent name="C:\Users\henry\IdeaProjects\CardGame\src\test\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="player.card" />
       <recent name="player" />
       <recent name="" />
       <recent name="org.example" />
@@ -90,8 +95,8 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.java in CardGame">
-    <configuration name="PlayerTest.printPlayHistory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.PlayerHandlerTest.playerHandler">
+    <configuration name="PlayerHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CardGame" />
       <extension name="coverage">
         <pattern>
@@ -100,14 +105,29 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="player" />
-      <option name="MAIN_CLASS_NAME" value="player.PlayerTest" />
-      <option name="METHOD_NAME" value="printPlayHistory" />
+      <option name="MAIN_CLASS_NAME" value="player.PlayerHandlerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerHandlerTest.playGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CardGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="player.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="player" />
+      <option name="MAIN_CLASS_NAME" value="player.PlayerHandlerTest" />
+      <option name="METHOD_NAME" value="playGame" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest.pushCard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerHandlerTest.playerHandler" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CardGame" />
       <extension name="coverage">
         <pattern>
@@ -116,14 +136,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="player" />
-      <option name="MAIN_CLASS_NAME" value="player.PlayerTest" />
-      <option name="METHOD_NAME" value="pushCard" />
+      <option name="MAIN_CLASS_NAME" value="player.PlayerHandlerTest" />
+      <option name="METHOD_NAME" value="playerHandler" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest.run" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerJudgeTest.judgeAsync" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CardGame" />
       <extension name="coverage">
         <pattern>
@@ -132,24 +152,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="player" />
-      <option name="MAIN_CLASS_NAME" value="player.PlayerTest" />
-      <option name="METHOD_NAME" value="run" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlayerTest.runAsync" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CardGame" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="player.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="player" />
-      <option name="MAIN_CLASS_NAME" value="player.PlayerTest" />
-      <option name="METHOD_NAME" value="runAsync" />
+      <option name="MAIN_CLASS_NAME" value="player.PlayerJudgeTest" />
+      <option name="METHOD_NAME" value="judgeAsync" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -165,11 +169,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PlayerHandlerTest.playerHandler" />
         <item itemvalue="JUnit.java in CardGame" />
-        <item itemvalue="JUnit.PlayerTest.runAsync" />
-        <item itemvalue="JUnit.PlayerTest.run" />
-        <item itemvalue="JUnit.PlayerTest.pushCard" />
-        <item itemvalue="JUnit.PlayerTest.printPlayHistory" />
+        <item itemvalue="JUnit.PlayerHandlerTest.playGame" />
+        <item itemvalue="JUnit.PlayerHandlerTest" />
+        <item itemvalue="JUnit.PlayerJudgeTest.judgeAsync" />
       </list>
     </recent_temporary>
   </component>
@@ -476,7 +480,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700148229683</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="restructured tests and added skeleton PlayerHandlerTest and PlayerJudgeTest">
+      <created>1700148642769</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1700148642769</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -513,8 +524,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="deck file from project spec" />
-    <MESSAGE value="slightly cleaned up CardReader constructor" />
     <MESSAGE value="slightly cleaned up CardReader.getCardsFromFile" />
     <MESSAGE value="fixed DeckTest to include new deck number" />
     <MESSAGE value="Fixed Player constructor not initializing hand" />
@@ -538,7 +547,9 @@
     <MESSAGE value="Multithreaded test for deck reader" />
     <MESSAGE value="implemented Player.printPlayHistory test" />
     <MESSAGE value="implemented asynchronous Player.run test" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented asynchronous Player.run test" />
+    <MESSAGE value="restructured tests and added skeleton PlayerHandlerTest and PlayerJudgeTest" />
+    <MESSAGE value="PlayerHandler unit tests + modified test packs 1-4 to be fully featured" />
+    <option name="LAST_COMMIT_MESSAGE" value="PlayerHandler unit tests + modified test packs 1-4 to be fully featured" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
