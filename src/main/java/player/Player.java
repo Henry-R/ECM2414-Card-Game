@@ -1,4 +1,7 @@
-package org.example;
+package player;
+
+import player.card.Card;
+import player.card.Deck;
 
 import java.util.ArrayDeque;
 import java.util.Queue;

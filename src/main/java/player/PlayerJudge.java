@@ -1,4 +1,4 @@
-package org.example;
+package player;
 
 public class PlayerJudge {
     int winningTurn;

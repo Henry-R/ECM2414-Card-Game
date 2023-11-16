@@ -1,6 +1,8 @@
-package org.example;
+package player;
 
-import org.example.Exceptions.InsufficientCardException;
+import player.card.CardReader;
+import player.card.Deck;
+import player.exceptions.InsufficientCardException;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;

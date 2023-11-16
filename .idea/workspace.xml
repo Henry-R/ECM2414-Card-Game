@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Players now output all their hand states to file again">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PlayerJudge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PlayerJudge.java" afterDir="false" />
+    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="restructured project file hierarchy">
+      <change beforePath="$PROJECT_DIR$/src/main/java/player/card/CardGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CardGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,20 +76,20 @@
       <recent name="C:\Users\henry\IdeaProjects\CardGame\src\test\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="org.example" />
       <recent name="" />
+      <recent name="org.example" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CardGame">
+  <component name="RunManager" selected="JUnit.java in CardGame">
     <configuration name="CardGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.CardGame" />
+      <option name="MAIN_CLASS_NAME" value="org.example.Card.CardGame" />
       <module name="CardGame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="org.example.Card.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -102,7 +101,7 @@
       <module name="CardGame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="org.example.Card.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -117,7 +116,7 @@
       <module name="CardGame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="org.example.Card.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -132,7 +131,7 @@
       <module name="CardGame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="org.example.Card.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -154,8 +153,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CardGame" />
         <item itemvalue="JUnit.java in CardGame" />
+        <item itemvalue="Application.CardGame" />
         <item itemvalue="JUnit.PlayerTest" />
         <item itemvalue="JUnit.CardReaderTest" />
         <item itemvalue="JUnit.PlayerTest.removePreferred" />
@@ -416,7 +415,21 @@
       <option name="project" value="LOCAL" />
       <updated>1700088313812</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Made all methods in PlayerJudge synchronized">
+      <created>1700088691928</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1700088691928</updated>
+    </task>
+    <task id="LOCAL-00037" summary="restructured project file hierarchy">
+      <created>1700139015678</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1700139015678</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -443,8 +456,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Deckreader class and tests" />
-    <MESSAGE value="moved CardReader test files to resources" />
     <MESSAGE value="Test for CardReader failure" />
     <MESSAGE value="Test that CardReader returns correct number of cards" />
     <MESSAGE value="remove unnecessary space" />
@@ -468,7 +479,9 @@
     <MESSAGE value="Edited pack two so player 2 wins instead" />
     <MESSAGE value="removed unnecessary Player member variables" />
     <MESSAGE value="Players now output all their hand states to file again" />
-    <option name="LAST_COMMIT_MESSAGE" value="Players now output all their hand states to file again" />
+    <MESSAGE value="Made all methods in PlayerJudge synchronized" />
+    <MESSAGE value="restructured project file hierarchy" />
+    <option name="LAST_COMMIT_MESSAGE" value="restructured project file hierarchy" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

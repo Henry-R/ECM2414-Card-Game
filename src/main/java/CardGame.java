@@ -1,6 +1,5 @@
-package org.example;
-
-import org.example.Exceptions.InsufficientCardException;
+import player.exceptions.InsufficientCardException;
+import player.PlayerHandler;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;

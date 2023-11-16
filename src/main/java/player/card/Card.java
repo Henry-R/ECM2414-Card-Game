@@ -1,4 +1,4 @@
-package org.example;
+package player.card;
 
 public class Card {
     private final int denomination;

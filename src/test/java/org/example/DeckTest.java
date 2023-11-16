@@ -1,10 +1,8 @@
 package org.example;
 
+import player.card.Card;
+import player.card.Deck;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 

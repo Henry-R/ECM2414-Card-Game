@@ -1,5 +1,6 @@
 package org.example;
 
+import player.card.CardReader;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
