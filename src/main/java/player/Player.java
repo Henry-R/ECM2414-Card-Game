@@ -5,7 +5,6 @@ import player.card.Deck;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Player implements Runnable {
@@ -40,10 +39,12 @@ public class Player implements Runnable {
      */
     private boolean allCardsSame() {
         // Get all the card denominations
-        var denominations = hand.stream().map((Card c) -> c.getDenomination());
+        var denominations = hand.stream().map(Card::getDenomination);
         // Check if set has size 1, implies all cards have same denomination
         var denominationSet = denominations.collect(Collectors.toSet());
-        return denominationSet.size() == 1;
+        // If preferredCount > 0, the deck must contain multiple card types:
+        // the cards in the hand, and the cards removed from the hand as they are preferred
+        return denominationSet.size() == 1 && preferredCount == 0;
     }
 
     private boolean hasWon() {

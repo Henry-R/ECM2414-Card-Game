@@ -40,4 +40,8 @@ public class Deck {
     public int getDeckNumber() {
         return deckNumber;
     }
+
+    public boolean isEmpty() {
+        return cards.isEmpty();
+    }
 }
