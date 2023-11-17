@@ -1,5 +1,9 @@
 package player.card;
 
+/**
+ * Card is thread safe, as it is only called through the Deck
+ * class which is thread safe.
+ */
 public class Card {
     private final int denomination;
 
