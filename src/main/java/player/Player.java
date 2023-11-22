@@ -138,6 +138,21 @@ public class Player implements Runnable {
         fileOutput.append(printablePlay);
     }
 
+    private void announceWin(int turn) {
+        judge.newWinner(playerNumber, turn);
+        fileOutput.append("player " + playerNumber + " wins\n" +
+                "player " + playerNumber + " exits\n" +
+                "player " + playerNumber + " final hand: " + getHandString());
+    }
+
+    private void announceLoss() {
+        int winningPlayerNumber = judge.getWinningPlayer();
+        fileOutput.append("player " + winningPlayerNumber + " has informed player " + playerNumber +
+                " that player " + winningPlayerNumber + " has won\n" +
+                "player " + playerNumber + " exits\n" +
+                "player " + playerNumber + " final hand: " + getHandString());
+    }
+
     /**
      * The main game loop. Loops until either this player wins, or the judge declares another player has already won
      */
@@ -147,13 +162,15 @@ public class Player implements Runnable {
 
         // Tests player starts with winning hand
         if (hasWon()) {
-            judge.newWinner(playerNumber, currentTurn);
+            announceWin(currentTurn);
+            return;
         }
 
         // Until thread exits (either because of an interrupt or because player has won)
         while (true) {
             if (judge.playerHasWon() && judge.getWinningTurn() < currentTurn) {
                 // Taken more turns than the winner, so this player will never do better
+                announceLoss();
                 // Exit thread
                 return;
             }
@@ -165,7 +182,7 @@ public class Player implements Runnable {
             }
             if (hasWon()) {
                 // Notify other players this player has won
-                judge.newWinner(playerNumber, currentTurn);
+                announceWin(currentTurn);
                 // Exit thread
                 return;
             }

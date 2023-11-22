@@ -47,7 +47,7 @@ class PlayerTest {
             outDeck.pushCard(new Card(1));
         });
         // Set winner so player only plays one move
-        judge.newWinner(0, 1);
+        judge.newWinner(0, 2);
         player.pushCard(new Card(2));
         player.run();
 
@@ -61,9 +61,9 @@ class PlayerTest {
                 output.append(scanner.nextLine()).append("\n");
             }
             assertEquals("""
-                    player 0 draws a 0 from deck 1
-                    player 0 discards a 2 to deck 2
-                    player 0 current hand is 0\s
+                    player 0 wins
+                    player 0 exits
+                    player 0 final hand: 2\s
                     """, output.toString());
         });
     }
