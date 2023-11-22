@@ -21,6 +21,7 @@ class PlayerJudgeTest {
     @Test
     void testPlayerHasWon() {
         var judge = new PlayerJudge();
+        assertFalse(judge.playerHasWon());
         judge.newWinner(0, 10);
         assertTrue(judge.playerHasWon());
     }
