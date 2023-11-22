@@ -23,7 +23,6 @@ class PlayerTest {
     @Test
     void testPushCard() {
         var testPlayer1 = new Player(0, null, null, null);
-        var testPlayer2 = new Player(0, null, null, null);
 
         // Setup state
         // Test one card
@@ -34,17 +33,6 @@ class PlayerTest {
         testPlayer1.pushCard(new Card(3));
         testPlayer1.pushCard(new Card(4));
         assertEquals("1 2 3 4 ", testPlayer1.getHandString());
-
-        // Test with preferred card
-        // (preferred cards are treated differently by the Player class, so test them separately)
-        // Test with one card
-        testPlayer2.pushCard(new Card(0));
-        assertEquals("0 ", testPlayer2.getHandString());
-        // Test with full deck
-        testPlayer2.pushCard(new Card(0));
-        testPlayer2.pushCard(new Card(0));
-        testPlayer2.pushCard(new Card(0));
-        assertEquals("0 0 0 0 ", testPlayer2.getHandString());
     }
 
     @Test

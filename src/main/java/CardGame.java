@@ -22,7 +22,7 @@ public class CardGame
      */
     private static String getValidPackLocation() {
         Scanner in = new Scanner(System.in);
-        System.out.println("Please enter the number of players:");
+        System.out.println("Please enter the pack location:");
         return in.nextLine();
     }
 
