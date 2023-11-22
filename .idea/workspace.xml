@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Removed unnessary test in Player">
-      <change beforePath="$PROJECT_DIR$/src/test/java/player/PlayerJudgeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/player/PlayerJudgeTest.java" afterDir="false" />
+    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Additional assertion that player did not win before winner is declared">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packs/two.txt" beforeDir="false" afterPath="$PROJECT_DIR$/packs/two.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/player/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +96,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PlayerJudgeTest.testPlayerHasWon">
+  <component name="RunManager" selected="JUnit.java in CardGame">
     <configuration name="CardGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CardGame" />
       <module name="CardGame" />
@@ -102,7 +104,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerHandlerTest.testPlayGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CardGame" />
       <extension name="coverage">
         <pattern>
@@ -112,7 +114,8 @@
       </extension>
       <option name="PACKAGE_NAME" value="player" />
       <option name="MAIN_CLASS_NAME" value="player.PlayerHandlerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="testPlayGame" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -159,11 +162,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.java in CardGame" />
+        <item itemvalue="JUnit.PlayerHandlerTest.testPlayGame" />
         <item itemvalue="JUnit.PlayerJudgeTest.testPlayerHasWon" />
         <item itemvalue="Application.CardGame" />
-        <item itemvalue="JUnit.java in CardGame" />
         <item itemvalue="JUnit.PlayerTest.testRun" />
-        <item itemvalue="JUnit.PlayerHandlerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -175,13 +178,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699355020949</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Added Deck constructor that creates deck with initial collection of cards">
-      <created>1699475404966</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1699475404966</updated>
     </task>
     <task id="LOCAL-00010" summary="Test when Deck given empty card collection">
       <created>1699475757922</created>
@@ -519,7 +515,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700656692071</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Additional assertion that player did not win before winner is declared">
+      <created>1700657382133</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1700657382133</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -556,7 +559,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="rewrote Player.play() to simplify logic" />
     <MESSAGE value="Created PlayerHandler to handle creating of threads. Created PlayerJudge to act as protected shared memory so Player objects can communicate wins" />
     <MESSAGE value="added more test decks" />
     <MESSAGE value="Edited pack two so player 2 wins instead" />
@@ -581,7 +583,8 @@
     <MESSAGE value="Edited player to use priority queue instead of tracking preferred cards separately" />
     <MESSAGE value="Removed redundant allCardsSame function from Player" />
     <MESSAGE value="Removed unnessary test in Player" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed unnessary test in Player" />
+    <MESSAGE value="Additional assertion that player did not win before winner is declared" />
+    <option name="LAST_COMMIT_MESSAGE" value="Additional assertion that player did not win before winner is declared" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

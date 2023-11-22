@@ -144,6 +144,12 @@ public class Player implements Runnable {
     @Override
     public void run() {
         int currentTurn = 1;
+
+        // Tests player starts with winning hand
+        if (hasWon()) {
+            judge.newWinner(playerNumber, currentTurn);
+        }
+
         // Until thread exits (either because of an interrupt or because player has won)
         while (true) {
             if (judge.playerHasWon() && judge.getWinningTurn() < currentTurn) {
