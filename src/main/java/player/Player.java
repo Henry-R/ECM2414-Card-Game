@@ -3,8 +3,7 @@ package player;
 import player.card.Card;
 import player.card.Deck;
 
-import java.util.Comparator;
-import java.util.PriorityQueue;
+import java.util.LinkedList;
 import java.util.stream.Collectors;
 
 public class Player implements Runnable {
@@ -18,7 +17,7 @@ public class Player implements Runnable {
     // Used as a shared memory to communicate between players if they should stop
     private final PlayerJudge judge;
     // All the cards currently in this player's hand
-    private final PriorityQueue<Card> hand;
+    private final LinkedList<Card> hand;
     // The player's output which describes all their moves
     private final StringBuilder fileOutput;
 
@@ -36,16 +35,7 @@ public class Player implements Runnable {
         this.outputDeck = outputDeck;
         this.judge = judge;
 
-        // This comparator always puts a preferred card last
-        final Comparator<Card> preferredCardComparator = (c1, c2) -> {
-            // c1 is preferred, so put it after c2
-            if (c1.getDenomination() == playerNumber) return 1;
-            // c2 is preferred, so put it after c1
-            if (c2.getDenomination() == playerNumber) return -1;
-            // If neither card is preferred, use regular integer comparison
-            else return c1.getDenomination() - c2.getDenomination();
-        };
-        hand = new PriorityQueue<>(4, preferredCardComparator);
+        hand = new LinkedList<>();
 
         fileOutput = new StringBuilder();
     }
@@ -67,7 +57,18 @@ public class Player implements Runnable {
      * @param newCard the card that will be pushed into this player's hand
      */
     public void pushCard(Card newCard) {
-         hand.add(newCard);
+        // Find index of first preferred card
+        var firstPreferred = hand.stream()
+                .filter((c) -> c.getDenomination() == playerNumber)
+                .findFirst();
+        if (firstPreferred.isEmpty()) {
+            // If no preferred cards, add new card at end of list (FIFO queue style)
+            hand.add(newCard);
+        } else {
+            // If the hand contains preferred cards, put new card before the preferred cards
+            var preferredIndex = hand.indexOf(firstPreferred.get());
+            hand.add(preferredIndex, newCard);
+        }
     }
 
     /**
