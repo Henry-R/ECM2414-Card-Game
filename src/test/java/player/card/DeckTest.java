@@ -3,6 +3,8 @@ package player.card;
 import org.junit.jupiter.api.Timeout;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
+import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -37,6 +39,33 @@ class DeckTest {
             assertEquals(2, testDeck.dealNextCard().getDenomination());
             assertEquals(3, testDeck.dealNextCard().getDenomination());
             t.join();
+        });
+    }
+
+    @Test
+    void testPrintDeckState() {
+        // Initialize deck state
+        var deck = new Deck(0);
+        assertDoesNotThrow(() -> {
+            deck.pushCard(new Card(1));
+            deck.pushCard(new Card(2));
+            deck.pushCard(new Card(3));
+            deck.pushCard(new Card(4));
+        });
+
+        deck.printDeckState();
+        assertDoesNotThrow(() -> {
+            // Read deck contents that was outputted to file
+            StringBuilder output = new StringBuilder();
+            File file = new File("deck0_output.txt");
+            Scanner scanner = new Scanner(file);
+            while (scanner.hasNextLine()) {
+                output.append(scanner.nextLine()).append("\n");
+            }
+            // Ensure that the output is as expected
+            assertEquals("""
+                    deck0 contents: 1 2 3 4\s
+                    """, output.toString());
         });
     }
 
