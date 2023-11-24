@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
+      <artifact name="CardGame:jar" />
       <artifact name="CardGame:jar_tests" />
     </artifacts-to-build>
   </component>
@@ -9,8 +10,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Added docstrings to new Player, PlayerHandler, and Deck methods">
-      <change beforePath="$PROJECT_DIR$/src/main/java/CardGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CardGame.java" afterDir="false" />
+    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Variables in the main function now follow naming conventions">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/player/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/player/PlayerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,26 +104,10 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.java in CardGame">
+  <component name="RunManager" selected="JUnit.PlayerTest.testPrintPlayHistory">
     <configuration name="CardGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CardGame" />
       <module name="CardGame" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlayerHandlerTest.testPlayGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CardGame" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="player.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="player" />
-      <option name="MAIN_CLASS_NAME" value="player.PlayerHandlerTest" />
-      <option name="METHOD_NAME" value="testPlayGame" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -157,6 +144,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PlayerTest.testPrintPlayHistory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CardGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="player.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="player" />
+      <option name="MAIN_CLASS_NAME" value="player.PlayerTest" />
+      <option name="METHOD_NAME" value="testPrintPlayHistory" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="java in CardGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CardGame" />
       <option name="TEST_OBJECT" value="directory" />
@@ -167,11 +170,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PlayerTest.testPrintPlayHistory" />
         <item itemvalue="JUnit.java in CardGame" />
         <item itemvalue="Application.CardGame" />
         <item itemvalue="JUnit.PlayerTest.test" />
         <item itemvalue="JUnit.PlayerTest" />
-        <item itemvalue="JUnit.PlayerHandlerTest.testPlayGame" />
       </list>
     </recent_temporary>
   </component>
@@ -183,13 +186,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699355020949</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Fixed Player constructor not initializing hand">
-      <created>1699970490328</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1699970490328</updated>
     </task>
     <task id="LOCAL-00021" summary="Fixed ConcurrentModificationException being thrown in Player">
       <created>1699971413350</created>
@@ -527,7 +523,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700827264243</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Variables in the main function now follow naming conventions">
+      <created>1700827342719</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1700827342719</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -564,7 +567,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="implemented asynchronous Player.run test" />
     <MESSAGE value="restructured tests and added skeleton PlayerHandlerTest and PlayerJudgeTest" />
     <MESSAGE value="PlayerHandler unit tests + modified test packs 1-4 to be fully featured" />
     <MESSAGE value="simplified CardReaderTest.nextCards" />
@@ -589,7 +591,8 @@
     <MESSAGE value="Moved PlayerHandler functionality into separate methods" />
     <MESSAGE value="Player now prints initial hand to file" />
     <MESSAGE value="Added docstrings to new Player, PlayerHandler, and Deck methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added docstrings to new Player, PlayerHandler, and Deck methods" />
+    <MESSAGE value="Variables in the main function now follow naming conventions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Variables in the main function now follow naming conventions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

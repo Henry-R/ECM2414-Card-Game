@@ -170,7 +170,7 @@ public class Player implements Runnable {
         int currentTurn = 1;
 
         // Output initial hand to final file output
-        fileOutput.append("player").append(playerNumber).append(" initial hand ")
+        fileOutput.append("player ").append(playerNumber).append(" initial hand ")
                 .append(getHandString()).append("\n");
 
         // Tests player starts with winning hand
@@ -181,7 +181,7 @@ public class Player implements Runnable {
 
         // Until thread exits (either because of an interrupt or because player has won)
         while (true) {
-            if (judge.playerHasWon() && judge.getWinningTurn() < currentTurn) {
+            if (judge.playerHasWon() && judge.getWinningTurn() <= currentTurn) {
                 // Taken more turns than the winner, so this player will never do better
                 announceLoss();
                 // Exit thread

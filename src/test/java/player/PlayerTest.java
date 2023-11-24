@@ -43,12 +43,15 @@ class PlayerTest {
         var player = new Player(0, inDeck, outDeck, judge);
 
         assertDoesNotThrow(() -> {
-            inDeck.pushCard(new Card(0));
-            outDeck.pushCard(new Card(1));
+            inDeck.pushCard(new Card(5));
+            outDeck.pushCard(new Card(0));
         });
         // Set winner so player only plays one move
         judge.newWinner(0, 2);
+        player.pushCard(new Card(1));
         player.pushCard(new Card(2));
+        player.pushCard(new Card(3));
+        player.pushCard(new Card(4));
         player.run();
 
         // Creates a file called "player0_output.txt" containing the play
@@ -61,9 +64,13 @@ class PlayerTest {
                 output.append(scanner.nextLine()).append("\n");
             }
             assertEquals("""
-                    player 0 wins
+                    player 0 initial hand 1 2 3 4\s
+                    player 0 draws a 5 from deck 1
+                    player 0 discards a 1 to deck 2
+                    player 0 current hand is 2 3 4 5\s
+                    player 0 has informed player 0 that player 0 has won
                     player 0 exits
-                    player 0 final hand: 2\s
+                    player 0 final hand: 2 3 4 5\s
                     """, output.toString());
         });
     }
