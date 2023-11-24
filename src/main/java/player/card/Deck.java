@@ -1,5 +1,7 @@
 package player.card;
 
+import player.TextFile;
+
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -44,6 +46,21 @@ public class Deck {
      */
     public int getDeckNumber() {
         return deckNumber;
+    }
+
+    private String getDeckString() {
+        var result = new StringBuilder();
+        for (var card : cards) {
+            result.append(card.getDenomination())
+                    .append(" ");
+        }
+        return result.toString();
+    }
+
+    public void printDeckState() {
+        var out = new TextFile("deck" + deckNumber + "_output.txt");
+        var deckContents = getDeckString();
+        out.write("deck" + deckNumber + " contents: " + deckContents);
     }
 
     /**

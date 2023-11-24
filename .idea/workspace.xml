@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="CardGame:jar_tests" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Fixed player hand to be a FIFO list, as priority queue was not FIFO">
+    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Added docstings to TextFile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/player/TextFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/player/TextFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/player/PlayerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/player/PlayerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/player/card/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/player/card/Deck.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,18 +69,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "C:/Users/henry/IdeaProjects/CardGame/packs",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -95,7 +103,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.java in CardGame">
+  <component name="RunManager" selected="Application.CardGame">
     <configuration name="CardGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CardGame" />
       <module name="CardGame" />
@@ -161,9 +169,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CardGame" />
         <item itemvalue="JUnit.java in CardGame" />
         <item itemvalue="JUnit.PlayerTest.test" />
-        <item itemvalue="Application.CardGame" />
         <item itemvalue="JUnit.PlayerTest" />
         <item itemvalue="JUnit.PlayerHandlerTest.testPlayGame" />
       </list>
@@ -177,13 +185,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699355020949</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Test for CardReader failure">
-      <created>1699535835164</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1699535835164</updated>
     </task>
     <task id="LOCAL-00014" summary="Test that CardReader returns correct number of cards">
       <created>1699535950917</created>
@@ -521,7 +522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700744768426</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Added docstings to TextFile">
+      <created>1700818564322</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1700818564322</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -558,7 +566,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Players now output all their hand states to file again" />
     <MESSAGE value="Made all methods in PlayerJudge synchronized" />
     <MESSAGE value="restructured project file hierarchy" />
     <MESSAGE value="Multithreaded test for deck reader" />
@@ -583,7 +590,8 @@
     <MESSAGE value="Players now announce winners and final hand" />
     <MESSAGE value="fix player output test" />
     <MESSAGE value="Fixed player hand to be a FIFO list, as priority queue was not FIFO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed player hand to be a FIFO list, as priority queue was not FIFO" />
+    <MESSAGE value="Added docstings to TextFile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added docstings to TextFile" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
