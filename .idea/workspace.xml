@@ -9,10 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Added docstings to TextFile">
+    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Moved PlayerHandler functionality into separate methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/player/PlayerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/player/PlayerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/player/card/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/player/card/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/player/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +102,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CardGame">
+  <component name="RunManager" selected="JUnit.java in CardGame">
     <configuration name="CardGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CardGame" />
       <module name="CardGame" />
@@ -169,8 +168,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CardGame" />
         <item itemvalue="JUnit.java in CardGame" />
+        <item itemvalue="Application.CardGame" />
         <item itemvalue="JUnit.PlayerTest.test" />
         <item itemvalue="JUnit.PlayerTest" />
         <item itemvalue="JUnit.PlayerHandlerTest.testPlayGame" />
@@ -185,20 +184,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699355020949</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Test that CardReader returns correct number of cards">
-      <created>1699535950917</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1699535950917</updated>
-    </task>
-    <task id="LOCAL-00015" summary="remove unnecessary space">
-      <created>1699536080113</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1699536080113</updated>
     </task>
     <task id="LOCAL-00016" summary="deck file from project spec">
       <created>1699536634221</created>
@@ -529,7 +514,21 @@
       <option name="project" value="LOCAL" />
       <updated>1700818564322</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Added method to write deck's content to file">
+      <created>1700826324577</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1700826324577</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Moved PlayerHandler functionality into separate methods">
+      <created>1700826354701</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1700826354701</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -566,8 +565,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Made all methods in PlayerJudge synchronized" />
-    <MESSAGE value="restructured project file hierarchy" />
     <MESSAGE value="Multithreaded test for deck reader" />
     <MESSAGE value="implemented Player.printPlayHistory test" />
     <MESSAGE value="implemented asynchronous Player.run test" />
@@ -591,7 +588,9 @@
     <MESSAGE value="fix player output test" />
     <MESSAGE value="Fixed player hand to be a FIFO list, as priority queue was not FIFO" />
     <MESSAGE value="Added docstings to TextFile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added docstings to TextFile" />
+    <MESSAGE value="Added method to write deck's content to file" />
+    <MESSAGE value="Moved PlayerHandler functionality into separate methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved PlayerHandler functionality into separate methods" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

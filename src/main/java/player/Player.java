@@ -161,6 +161,10 @@ public class Player implements Runnable {
     public void run() {
         int currentTurn = 1;
 
+        // Output initial hand to final file output
+        fileOutput.append("player").append(playerNumber).append(" initial hand ")
+                .append(getHandString()).append("\n");
+
         // Tests player starts with winning hand
         if (hasWon()) {
             announceWin(currentTurn);
