@@ -28,10 +28,10 @@ public class CardGame
 
     public static void main( String[] args )
     {
-        var player_count = getValidPlayerCount();
-        var pack_location = getValidPackLocation();
+        var playerCount = getValidPlayerCount();
+        var packLocation = getValidPackLocation();
         try {
-            var playerHandler = new PlayerHandler(player_count, pack_location);
+            var playerHandler = new PlayerHandler(playerCount, packLocation);
             int winner = playerHandler.playGame();
             System.out.println("Player " + winner + " wins!");
         }
