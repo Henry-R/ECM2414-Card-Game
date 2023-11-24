@@ -9,9 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Moved PlayerHandler functionality into separate methods">
+    <list default="true" id="713d9ab2-18c0-4fed-bf2f-970e05134a7e" name="Changes" comment="Player now prints initial hand to file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/player/PlayerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/player/PlayerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/player/card/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/player/card/Deck.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,27 +186,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699355020949</updated>
-    </task>
-    <task id="LOCAL-00016" summary="deck file from project spec">
-      <created>1699536634221</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1699536634221</updated>
-    </task>
-    <task id="LOCAL-00017" summary="slightly cleaned up CardReader constructor">
-      <created>1699537027029</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1699537027029</updated>
-    </task>
-    <task id="LOCAL-00018" summary="slightly cleaned up CardReader.getCardsFromFile">
-      <created>1699537084033</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1699537084033</updated>
     </task>
     <task id="LOCAL-00019" summary="fixed DeckTest to include new deck number">
       <created>1699553641103</created>
@@ -528,7 +509,28 @@
       <option name="project" value="LOCAL" />
       <updated>1700826354701</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Player now prints initial hand to file">
+      <created>1700826689692</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1700826689692</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Player now prints initial hand to file">
+      <created>1700826717754</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1700826717754</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Player now prints initial hand to file">
+      <created>1700826728155</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1700826728155</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -565,7 +567,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Multithreaded test for deck reader" />
     <MESSAGE value="implemented Player.printPlayHistory test" />
     <MESSAGE value="implemented asynchronous Player.run test" />
     <MESSAGE value="restructured tests and added skeleton PlayerHandlerTest and PlayerJudgeTest" />
@@ -590,7 +591,8 @@
     <MESSAGE value="Added docstings to TextFile" />
     <MESSAGE value="Added method to write deck's content to file" />
     <MESSAGE value="Moved PlayerHandler functionality into separate methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved PlayerHandler functionality into separate methods" />
+    <MESSAGE value="Player now prints initial hand to file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Player now prints initial hand to file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -33,6 +33,11 @@ public class PlayerHandler {
         DealCards(players, decks, packURL);
     }
 
+    /**
+     * Creates a list of decks with deck number initialized to their index in the list plus one
+     * @param playerCount the number of players playing the game. Equal to the number of returned decks
+     * @return A list of initialized decks
+     */
     ArrayList<Deck> CreateDecks(int playerCount) {
         var decks = new ArrayList<Deck>();
         for (int i = 0; i < playerCount; i++) {
@@ -41,6 +46,13 @@ public class PlayerHandler {
         return decks;
     }
 
+    /**
+     * Creates a list of initialized players. Each player's player number is their index in the list plus one.
+     * Each player is automatically assigned an input and output using round-robin topology as described in the brief.
+     * The number of returned players is equal to the number of given decks.
+     * @param decks The decks the players will be drawing and discarding from
+     * @return A list of initialized players
+     */
     ArrayList<Player> CreatePlayers(ArrayList<Deck> decks) {
         int playerCount = decks.size();
         var players = new ArrayList<Player>();
@@ -53,6 +65,16 @@ public class PlayerHandler {
         return players;
     }
 
+    /**
+     *
+     * @param players The players some cards will be dealt to
+     * @param decks The decks some cards will be dealt to
+     * @param packURL The location of the pack of cards in the filesystem
+     * @throws InsufficientCardException If the pack of cards does not have
+     * enough cards to deal to every player and deck
+     * @throws FileNotFoundException If the packURL is not found
+     * @throws InterruptedException If this method is interrupted while inputting cards to decks. Should never happen
+     */
     void DealCards(ArrayList<Player> players, ArrayList<Deck> decks, String packURL)
             throws InsufficientCardException, FileNotFoundException, InterruptedException {
         int PLAYER_HAND_SIZE = 4;

@@ -48,6 +48,10 @@ public class Deck {
         return deckNumber;
     }
 
+    /**
+     * Returns a string containing the denominations of cards in this deck
+     * @return String representing the denominations of cards in this deck
+     */
     private String getDeckString() {
         var result = new StringBuilder();
         for (var card : cards) {
@@ -57,6 +61,9 @@ public class Deck {
         return result.toString();
     }
 
+    /**
+     * Outputs the contents of this deck to file
+     */
     public void printDeckState() {
         var out = new TextFile("deck" + deckNumber + "_output.txt");
         var deckContents = getDeckString();

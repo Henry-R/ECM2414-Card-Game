@@ -139,6 +139,11 @@ public class Player implements Runnable {
         fileOutput.append(printablePlay);
     }
 
+    /**
+     * Writes to shared player memory that this player has won.
+     * Prints final hand to final player file output
+     * @param turn The turn this player won on
+     */
     private void announceWin(int turn) {
         judge.newWinner(playerNumber, turn);
         fileOutput.append("player " + playerNumber + " wins\n" +
@@ -146,6 +151,9 @@ public class Player implements Runnable {
                 "player " + playerNumber + " final hand: " + getHandString());
     }
 
+    /**
+     * Writes to final player file output the winning player, and this player's final hand
+     */
     private void announceLoss() {
         int winningPlayerNumber = judge.getWinningPlayer();
         fileOutput.append("player " + winningPlayerNumber + " has informed player " + playerNumber +
