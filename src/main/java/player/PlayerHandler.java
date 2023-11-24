@@ -6,7 +6,6 @@ import player.exceptions.InsufficientCardException;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Provides methods for setting up the game and playing it. Game is played synchronously with every player having a
@@ -15,52 +14,67 @@ import java.util.List;
 public class PlayerHandler {
 
     private final PlayerJudge judge;
-    private final List<Player> players;
+    private final ArrayList<Deck> decks;
+    private final ArrayList<Player> players;
 
     /**
-     * Initializes the game by created and dealing cards to players and decks
-     * @param player_count The number of players in the game
+     * Initializes the game by loading and dealing cards to players and decks
+     * @param playerCount The number of players in the game
      * @param packURL The location of the pack of cards on this PC
      * @throws InsufficientCardException The pack does not have enough cards to deal to every player and deck
      * @throws FileNotFoundException The pack cannot be found on the PC
      * @throws InterruptedException Interrupted while setting up the game
      */
-    public PlayerHandler(int player_count, String packURL)
-            throws InsufficientCardException, FileNotFoundException, InterruptedException{
+    public PlayerHandler(int playerCount, String packURL)
+            throws InsufficientCardException, FileNotFoundException, InterruptedException {
+        judge = new PlayerJudge();
+        decks = CreateDecks(playerCount);
+        players = CreatePlayers(decks);
+        DealCards(players, decks, packURL);
+    }
+
+    ArrayList<Deck> CreateDecks(int playerCount) {
+        var decks = new ArrayList<Deck>();
+        for (int i = 0; i < playerCount; i++) {
+            decks.add(new Deck(i + 1));
+        }
+        return decks;
+    }
+
+    ArrayList<Player> CreatePlayers(ArrayList<Deck> decks) {
+        int playerCount = decks.size();
+        var players = new ArrayList<Player>();
+        for (int i = 0; i < playerCount; i++) {
+            Deck in_deck =  decks.get(i);
+            // The modulus creates the round-robin topology
+            Deck out_deck = decks.get((i + 1) % playerCount);
+            players.add(new Player(i + 1, in_deck, out_deck, judge));
+        }
+        return players;
+    }
+
+    void DealCards(ArrayList<Player> players, ArrayList<Deck> decks, String packURL)
+            throws InsufficientCardException, FileNotFoundException, InterruptedException {
         int PLAYER_HAND_SIZE = 4;
         int DECK_SIZE = 4;
         int TOTAL_SIZE = PLAYER_HAND_SIZE + DECK_SIZE;
-        judge   = new PlayerJudge();
-        players = new ArrayList<>();
-        var decks   = new ArrayList<Deck>();
+        int playerCount = players.size();
 
-        // Create players and decks in round-robin topology
-        for (int i = 0; i < player_count; i++) {
-            decks.add(new Deck(i + 1));
-        }
-        for (int i = 0; i < player_count; i++) {
-            Deck in_deck =  decks.get(i);
-            // The modulus creates the round-robin topology
-            Deck out_deck = decks.get((i + 1) % player_count);
-            players.add(new Player(i + 1, in_deck, out_deck, judge));
-        }
-
-        // Deal cards to newly constructed players and decks
         var initialCards = new CardReader(packURL);
-        if (initialCards.getCardCount() < player_count * TOTAL_SIZE) {
+        if (initialCards.getCardCount() < playerCount * TOTAL_SIZE) {
             throw new InsufficientCardException("Not enough cards in " + packURL +
-                    "! Expected " + player_count * TOTAL_SIZE + " but got " + initialCards.getCardCount());
+                    "! Expected " + playerCount * TOTAL_SIZE + " but got " + initialCards.getCardCount());
         }
         else {
             // First deal to players
-            for (int i = 0; i < player_count * PLAYER_HAND_SIZE; i++) {
+            for (int i = 0; i < playerCount * PLAYER_HAND_SIZE; i++) {
                 var nextCard = initialCards.nextCard();
-                players.get(i % player_count).pushCard(nextCard);
+                players.get(i % playerCount).pushCard(nextCard);
             }
             // Then deal to decks
-            for (int i = 0; i < player_count * DECK_SIZE; i++) {
+            for (int i = 0; i < playerCount * DECK_SIZE; i++) {
                 var nextCard = initialCards.nextCard();
-                decks.get(i % player_count).pushCard(nextCard);
+                decks.get(i % playerCount).pushCard(nextCard);
             }
         }
     }
@@ -87,6 +101,10 @@ public class PlayerHandler {
         // Output all the player play history to file
         for (var player : players) {
             player.printPlayHistory();
+        }
+        // Output all the deck states to file
+        for (var deck : decks) {
+            deck.printDeckState();
         }
 
         // Judge keeps track of the winner during the game
