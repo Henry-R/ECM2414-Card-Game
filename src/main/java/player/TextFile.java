@@ -3,9 +3,16 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * Provides a wrapper for file string output
+ */
 public class TextFile {
     private final String filename;
 
+    /**
+     * Opens a text file and readies for writing
+     * @param fn the file path of the file to read
+     */
     public TextFile(String fn) {
         filename = fn;
         try{
@@ -17,6 +24,11 @@ public class TextFile {
         } catch (IOException e) {}
     }
 
+    /**
+     * Outputs a string to the file associated with this TextFile object
+     * @param s the text that will be outputted
+     * @return True if the write was successful, false otherwise
+     */
     public boolean write(String s) {
         try {
             FileWriter myWriter = new FileWriter(filename);
